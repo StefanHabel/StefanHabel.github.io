@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>PyMaterialXCore.Document &#8212; MaterialX 1.39.2 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b20cc3f5" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css?v=c058f7c8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=d8f72ed4" />
+    <script src="../../_static/documentation_options.js?v=e2b5d38d"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="pymaterialxcore-document">
+<h1>PyMaterialXCore.Document<a class="headerlink" href="#pymaterialxcore-document" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Document</span></span><a class="headerlink" href="#PyMaterialXCore.Document" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="PyMaterialXCore.GraphElement.html#PyMaterialXCore.GraphElement" title="PyMaterialXCore.GraphElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">GraphElement</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.__init__" title="PyMaterialXCore.Document.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.addAttributeDef" title="PyMaterialXCore.Document.addAttributeDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addAttributeDef</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.addCollection" title="PyMaterialXCore.Document.addCollection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addCollection</span></code></a>(self[, name])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.addGeomInfo" title="PyMaterialXCore.Document.addGeomInfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addGeomInfo</span></code></a>(self[, name, geom])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.addGeomPropDef" title="PyMaterialXCore.Document.addGeomPropDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addGeomPropDef</span></code></a>(self, arg0, arg1)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.addImplementation" title="PyMaterialXCore.Document.addImplementation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addImplementation</span></code></a>(self[, name])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.addLook" title="PyMaterialXCore.Document.addLook"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addLook</span></code></a>(self[, name])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.addLookGroup" title="PyMaterialXCore.Document.addLookGroup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addLookGroup</span></code></a>(self[, name])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.addNodeDef" title="PyMaterialXCore.Document.addNodeDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addNodeDef</span></code></a>(self[, name, type, node])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.addNodeDefFromGraph" title="PyMaterialXCore.Document.addNodeDefFromGraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addNodeDefFromGraph</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Overloaded function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.addNodeGraph" title="PyMaterialXCore.Document.addNodeGraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addNodeGraph</span></code></a>(self[, name])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.addPropertySet" title="PyMaterialXCore.Document.addPropertySet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addPropertySet</span></code></a>(self[, name])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.addTargetDef" title="PyMaterialXCore.Document.addTargetDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addTargetDef</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.addTypeDef" title="PyMaterialXCore.Document.addTypeDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addTypeDef</span></code></a>(self[, name])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.addUnitDef" title="PyMaterialXCore.Document.addUnitDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addUnitDef</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.addUnitTypeDef" title="PyMaterialXCore.Document.addUnitTypeDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addUnitTypeDef</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.addVariantSet" title="PyMaterialXCore.Document.addVariantSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">addVariantSet</span></code></a>(self[, name])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.copy" title="PyMaterialXCore.Document.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getAttributeDef" title="PyMaterialXCore.Document.getAttributeDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getAttributeDef</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getAttributeDefs" title="PyMaterialXCore.Document.getAttributeDefs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getAttributeDefs</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getCollection" title="PyMaterialXCore.Document.getCollection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCollection</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getCollections" title="PyMaterialXCore.Document.getCollections"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getCollections</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getColorManagementConfig" title="PyMaterialXCore.Document.getColorManagementConfig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getColorManagementConfig</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getColorManagementSystem" title="PyMaterialXCore.Document.getColorManagementSystem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getColorManagementSystem</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getGeomInfo" title="PyMaterialXCore.Document.getGeomInfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getGeomInfo</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getGeomInfos" title="PyMaterialXCore.Document.getGeomInfos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getGeomInfos</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getGeomPropDef" title="PyMaterialXCore.Document.getGeomPropDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getGeomPropDef</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getGeomPropDefs" title="PyMaterialXCore.Document.getGeomPropDefs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getGeomPropDefs</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getGeomPropValue" title="PyMaterialXCore.Document.getGeomPropValue"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getGeomPropValue</span></code></a>(self, geomPropName[, geom])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getImplementation" title="PyMaterialXCore.Document.getImplementation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getImplementation</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getImplementations" title="PyMaterialXCore.Document.getImplementations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getImplementations</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getLook" title="PyMaterialXCore.Document.getLook"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getLook</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getLookGroup" title="PyMaterialXCore.Document.getLookGroup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getLookGroup</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getLookGroups" title="PyMaterialXCore.Document.getLookGroups"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getLookGroups</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getLooks" title="PyMaterialXCore.Document.getLooks"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getLooks</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getMatchingImplementations" title="PyMaterialXCore.Document.getMatchingImplementations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMatchingImplementations</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getMatchingNodeDefs" title="PyMaterialXCore.Document.getMatchingNodeDefs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMatchingNodeDefs</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getMatchingPorts" title="PyMaterialXCore.Document.getMatchingPorts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMatchingPorts</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getMaterialOutputs" title="PyMaterialXCore.Document.getMaterialOutputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMaterialOutputs</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getNodeDef" title="PyMaterialXCore.Document.getNodeDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNodeDef</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getNodeDefs" title="PyMaterialXCore.Document.getNodeDefs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNodeDefs</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getNodeGraph" title="PyMaterialXCore.Document.getNodeGraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNodeGraph</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getNodeGraphs" title="PyMaterialXCore.Document.getNodeGraphs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNodeGraphs</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getPropertySet" title="PyMaterialXCore.Document.getPropertySet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPropertySet</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getPropertySets" title="PyMaterialXCore.Document.getPropertySets"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPropertySets</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getReferencedSourceUris" title="PyMaterialXCore.Document.getReferencedSourceUris"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getReferencedSourceUris</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getTargetDef" title="PyMaterialXCore.Document.getTargetDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTargetDef</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getTargetDefs" title="PyMaterialXCore.Document.getTargetDefs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTargetDefs</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getTypeDef" title="PyMaterialXCore.Document.getTypeDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTypeDef</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getTypeDefs" title="PyMaterialXCore.Document.getTypeDefs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTypeDefs</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getUnitDef" title="PyMaterialXCore.Document.getUnitDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getUnitDef</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getUnitDefs" title="PyMaterialXCore.Document.getUnitDefs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getUnitDefs</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getUnitTypeDef" title="PyMaterialXCore.Document.getUnitTypeDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getUnitTypeDef</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getUnitTypeDefs" title="PyMaterialXCore.Document.getUnitTypeDefs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getUnitTypeDefs</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getVariantSet" title="PyMaterialXCore.Document.getVariantSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVariantSet</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.getVariantSets" title="PyMaterialXCore.Document.getVariantSets"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVariantSets</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.hasColorManagementConfig" title="PyMaterialXCore.Document.hasColorManagementConfig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasColorManagementConfig</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.hasColorManagementSystem" title="PyMaterialXCore.Document.hasColorManagementSystem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasColorManagementSystem</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.importLibrary" title="PyMaterialXCore.Document.importLibrary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">importLibrary</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.initialize" title="PyMaterialXCore.Document.initialize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">initialize</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.removeAttributeDef" title="PyMaterialXCore.Document.removeAttributeDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">removeAttributeDef</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.removeCollection" title="PyMaterialXCore.Document.removeCollection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">removeCollection</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.removeGeomInfo" title="PyMaterialXCore.Document.removeGeomInfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">removeGeomInfo</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.removeGeomPropDef" title="PyMaterialXCore.Document.removeGeomPropDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">removeGeomPropDef</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.removeImplementation" title="PyMaterialXCore.Document.removeImplementation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">removeImplementation</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.removeLook" title="PyMaterialXCore.Document.removeLook"><code class="xref py py-obj docutils literal notranslate"><span class="pre">removeLook</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.removeLookGroup" title="PyMaterialXCore.Document.removeLookGroup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">removeLookGroup</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.removeNodeDef" title="PyMaterialXCore.Document.removeNodeDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">removeNodeDef</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.removeNodeGraph" title="PyMaterialXCore.Document.removeNodeGraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">removeNodeGraph</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.removePropertySet" title="PyMaterialXCore.Document.removePropertySet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">removePropertySet</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.removeTargetDef" title="PyMaterialXCore.Document.removeTargetDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">removeTargetDef</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.removeTypeDef" title="PyMaterialXCore.Document.removeTypeDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">removeTypeDef</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.removeUnitDef" title="PyMaterialXCore.Document.removeUnitDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">removeUnitDef</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.removeUnitTypeDef" title="PyMaterialXCore.Document.removeUnitTypeDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">removeUnitTypeDef</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.removeVariantSet" title="PyMaterialXCore.Document.removeVariantSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">removeVariantSet</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.setColorManagementConfig" title="PyMaterialXCore.Document.setColorManagementConfig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setColorManagementConfig</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.setColorManagementSystem" title="PyMaterialXCore.Document.setColorManagementSystem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setColorManagementSystem</span></code></a>(self, arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Document.upgradeVersion" title="PyMaterialXCore.Document.upgradeVersion"><code class="xref py py-obj docutils literal notranslate"><span class="pre">upgradeVersion</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Link to this heading">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyMaterialXCore.Document.__init__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.addAttributeDef">
+<span class="sig-name descname"><span class="pre">addAttributeDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.AttributeDef.html#PyMaterialXCore.AttributeDef" title="PyMaterialXCore.AttributeDef"><span class="pre">AttributeDef</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.addAttributeDef" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.addCollection">
+<span class="sig-name descname"><span class="pre">addCollection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.Collection.html#PyMaterialXCore.Collection" title="PyMaterialXCore.Collection"><span class="pre">Collection</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.addCollection" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.addGeomInfo">
+<span class="sig-name descname"><span class="pre">addGeomInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.GeomInfo.html#PyMaterialXCore.GeomInfo" title="PyMaterialXCore.GeomInfo"><span class="pre">GeomInfo</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.addGeomInfo" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.addGeomPropDef">
+<span class="sig-name descname"><span class="pre">addGeomPropDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.GeomPropDef.html#PyMaterialXCore.GeomPropDef" title="PyMaterialXCore.GeomPropDef"><span class="pre">GeomPropDef</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.addGeomPropDef" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.addImplementation">
+<span class="sig-name descname"><span class="pre">addImplementation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.Implementation.html#PyMaterialXCore.Implementation" title="PyMaterialXCore.Implementation"><span class="pre">Implementation</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.addImplementation" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.addLook">
+<span class="sig-name descname"><span class="pre">addLook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.Look.html#PyMaterialXCore.Look" title="PyMaterialXCore.Look"><span class="pre">Look</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.addLook" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.addLookGroup">
+<span class="sig-name descname"><span class="pre">addLookGroup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.LookGroup.html#PyMaterialXCore.LookGroup" title="PyMaterialXCore.LookGroup"><span class="pre">LookGroup</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.addLookGroup" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.addNodeDef">
+<span class="sig-name descname"><span class="pre">addNodeDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'color3'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.NodeDef.html#PyMaterialXCore.NodeDef" title="PyMaterialXCore.NodeDef"><span class="pre">NodeDef</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.addNodeDef" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.addNodeDefFromGraph">
+<span class="sig-name descname"><span class="pre">addNodeDefFromGraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyMaterialXCore.Document.addNodeDefFromGraph" title="Link to this definition">¶</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>addNodeDefFromGraph(self: PyMaterialXCore.Document, arg0: PyMaterialXCore.NodeGraph, arg1: str, arg2: str, arg3: str) -&gt; PyMaterialXCore.NodeDef</p></li>
+<li><p>addNodeDefFromGraph(self: PyMaterialXCore.Document, arg0: PyMaterialXCore.NodeGraph, arg1: str, arg2: str, arg3: str, arg4: bool, arg5: str, arg6: str) -&gt; PyMaterialXCore.NodeDef</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.addNodeGraph">
+<span class="sig-name descname"><span class="pre">addNodeGraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.NodeGraph.html#PyMaterialXCore.NodeGraph" title="PyMaterialXCore.NodeGraph"><span class="pre">NodeGraph</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.addNodeGraph" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.addPropertySet">
+<span class="sig-name descname"><span class="pre">addPropertySet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.PropertySet.html#PyMaterialXCore.PropertySet" title="PyMaterialXCore.PropertySet"><span class="pre">PropertySet</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.addPropertySet" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.addTargetDef">
+<span class="sig-name descname"><span class="pre">addTargetDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.TargetDef.html#PyMaterialXCore.TargetDef" title="PyMaterialXCore.TargetDef"><span class="pre">TargetDef</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.addTargetDef" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.addTypeDef">
+<span class="sig-name descname"><span class="pre">addTypeDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.TypeDef.html#PyMaterialXCore.TypeDef" title="PyMaterialXCore.TypeDef"><span class="pre">TypeDef</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.addTypeDef" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.addUnitDef">
+<span class="sig-name descname"><span class="pre">addUnitDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.UnitDef.html#PyMaterialXCore.UnitDef" title="PyMaterialXCore.UnitDef"><span class="pre">UnitDef</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.addUnitDef" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.addUnitTypeDef">
+<span class="sig-name descname"><span class="pre">addUnitTypeDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.UnitTypeDef.html#PyMaterialXCore.UnitTypeDef" title="PyMaterialXCore.UnitTypeDef"><span class="pre">UnitTypeDef</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.addUnitTypeDef" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.addVariantSet">
+<span class="sig-name descname"><span class="pre">addVariantSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.VariantSet.html#PyMaterialXCore.VariantSet" title="PyMaterialXCore.VariantSet"><span class="pre">VariantSet</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.addVariantSet" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.copy" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getAttributeDef">
+<span class="sig-name descname"><span class="pre">getAttributeDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.AttributeDef.html#PyMaterialXCore.AttributeDef" title="PyMaterialXCore.AttributeDef"><span class="pre">AttributeDef</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getAttributeDef" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getAttributeDefs">
+<span class="sig-name descname"><span class="pre">getAttributeDefs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="PyMaterialXCore.AttributeDef.html#PyMaterialXCore.AttributeDef" title="PyMaterialXCore.AttributeDef"><span class="pre">AttributeDef</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getAttributeDefs" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getCollection">
+<span class="sig-name descname"><span class="pre">getCollection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.Collection.html#PyMaterialXCore.Collection" title="PyMaterialXCore.Collection"><span class="pre">Collection</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getCollection" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getCollections">
+<span class="sig-name descname"><span class="pre">getCollections</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="PyMaterialXCore.Collection.html#PyMaterialXCore.Collection" title="PyMaterialXCore.Collection"><span class="pre">Collection</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getCollections" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getColorManagementConfig">
+<span class="sig-name descname"><span class="pre">getColorManagementConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getColorManagementConfig" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getColorManagementSystem">
+<span class="sig-name descname"><span class="pre">getColorManagementSystem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getColorManagementSystem" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getGeomInfo">
+<span class="sig-name descname"><span class="pre">getGeomInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.GeomInfo.html#PyMaterialXCore.GeomInfo" title="PyMaterialXCore.GeomInfo"><span class="pre">GeomInfo</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getGeomInfo" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getGeomInfos">
+<span class="sig-name descname"><span class="pre">getGeomInfos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="PyMaterialXCore.GeomInfo.html#PyMaterialXCore.GeomInfo" title="PyMaterialXCore.GeomInfo"><span class="pre">GeomInfo</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getGeomInfos" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getGeomPropDef">
+<span class="sig-name descname"><span class="pre">getGeomPropDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.GeomPropDef.html#PyMaterialXCore.GeomPropDef" title="PyMaterialXCore.GeomPropDef"><span class="pre">GeomPropDef</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getGeomPropDef" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getGeomPropDefs">
+<span class="sig-name descname"><span class="pre">getGeomPropDefs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="PyMaterialXCore.GeomPropDef.html#PyMaterialXCore.GeomPropDef" title="PyMaterialXCore.GeomPropDef"><span class="pre">GeomPropDef</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getGeomPropDefs" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getGeomPropValue">
+<span class="sig-name descname"><span class="pre">getGeomPropValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">geomPropName</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../value-classes/PyMaterialXCore.Value.html#PyMaterialXCore.Value" title="PyMaterialXCore.Value"><span class="pre">Value</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getGeomPropValue" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getImplementation">
+<span class="sig-name descname"><span class="pre">getImplementation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.Implementation.html#PyMaterialXCore.Implementation" title="PyMaterialXCore.Implementation"><span class="pre">Implementation</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getImplementation" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getImplementations">
+<span class="sig-name descname"><span class="pre">getImplementations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="PyMaterialXCore.Implementation.html#PyMaterialXCore.Implementation" title="PyMaterialXCore.Implementation"><span class="pre">Implementation</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getImplementations" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getLook">
+<span class="sig-name descname"><span class="pre">getLook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.Look.html#PyMaterialXCore.Look" title="PyMaterialXCore.Look"><span class="pre">Look</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getLook" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getLookGroup">
+<span class="sig-name descname"><span class="pre">getLookGroup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.LookGroup.html#PyMaterialXCore.LookGroup" title="PyMaterialXCore.LookGroup"><span class="pre">LookGroup</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getLookGroup" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getLookGroups">
+<span class="sig-name descname"><span class="pre">getLookGroups</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="PyMaterialXCore.LookGroup.html#PyMaterialXCore.LookGroup" title="PyMaterialXCore.LookGroup"><span class="pre">LookGroup</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getLookGroups" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getLooks">
+<span class="sig-name descname"><span class="pre">getLooks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="PyMaterialXCore.Look.html#PyMaterialXCore.Look" title="PyMaterialXCore.Look"><span class="pre">Look</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getLooks" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getMatchingImplementations">
+<span class="sig-name descname"><span class="pre">getMatchingImplementations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="PyMaterialXCore.InterfaceElement.html#PyMaterialXCore.InterfaceElement" title="PyMaterialXCore.InterfaceElement"><span class="pre">InterfaceElement</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getMatchingImplementations" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getMatchingNodeDefs">
+<span class="sig-name descname"><span class="pre">getMatchingNodeDefs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="PyMaterialXCore.NodeDef.html#PyMaterialXCore.NodeDef" title="PyMaterialXCore.NodeDef"><span class="pre">NodeDef</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getMatchingNodeDefs" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getMatchingPorts">
+<span class="sig-name descname"><span class="pre">getMatchingPorts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="PyMaterialXCore.PortElement.html#PyMaterialXCore.PortElement" title="PyMaterialXCore.PortElement"><span class="pre">PortElement</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getMatchingPorts" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getMaterialOutputs">
+<span class="sig-name descname"><span class="pre">getMaterialOutputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="PyMaterialXCore.Output.html#PyMaterialXCore.Output" title="PyMaterialXCore.Output"><span class="pre">Output</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getMaterialOutputs" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getNodeDef">
+<span class="sig-name descname"><span class="pre">getNodeDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.NodeDef.html#PyMaterialXCore.NodeDef" title="PyMaterialXCore.NodeDef"><span class="pre">NodeDef</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getNodeDef" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getNodeDefs">
+<span class="sig-name descname"><span class="pre">getNodeDefs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="PyMaterialXCore.NodeDef.html#PyMaterialXCore.NodeDef" title="PyMaterialXCore.NodeDef"><span class="pre">NodeDef</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getNodeDefs" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getNodeGraph">
+<span class="sig-name descname"><span class="pre">getNodeGraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.NodeGraph.html#PyMaterialXCore.NodeGraph" title="PyMaterialXCore.NodeGraph"><span class="pre">NodeGraph</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getNodeGraph" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getNodeGraphs">
+<span class="sig-name descname"><span class="pre">getNodeGraphs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="PyMaterialXCore.NodeGraph.html#PyMaterialXCore.NodeGraph" title="PyMaterialXCore.NodeGraph"><span class="pre">NodeGraph</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getNodeGraphs" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getPropertySet">
+<span class="sig-name descname"><span class="pre">getPropertySet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.PropertySet.html#PyMaterialXCore.PropertySet" title="PyMaterialXCore.PropertySet"><span class="pre">PropertySet</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getPropertySet" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getPropertySets">
+<span class="sig-name descname"><span class="pre">getPropertySets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="PyMaterialXCore.PropertySet.html#PyMaterialXCore.PropertySet" title="PyMaterialXCore.PropertySet"><span class="pre">PropertySet</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getPropertySets" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getReferencedSourceUris">
+<span class="sig-name descname"><span class="pre">getReferencedSourceUris</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getReferencedSourceUris" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getTargetDef">
+<span class="sig-name descname"><span class="pre">getTargetDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.TargetDef.html#PyMaterialXCore.TargetDef" title="PyMaterialXCore.TargetDef"><span class="pre">TargetDef</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getTargetDef" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getTargetDefs">
+<span class="sig-name descname"><span class="pre">getTargetDefs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="PyMaterialXCore.TargetDef.html#PyMaterialXCore.TargetDef" title="PyMaterialXCore.TargetDef"><span class="pre">TargetDef</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getTargetDefs" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getTypeDef">
+<span class="sig-name descname"><span class="pre">getTypeDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.TypeDef.html#PyMaterialXCore.TypeDef" title="PyMaterialXCore.TypeDef"><span class="pre">TypeDef</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getTypeDef" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getTypeDefs">
+<span class="sig-name descname"><span class="pre">getTypeDefs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="PyMaterialXCore.TypeDef.html#PyMaterialXCore.TypeDef" title="PyMaterialXCore.TypeDef"><span class="pre">TypeDef</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getTypeDefs" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getUnitDef">
+<span class="sig-name descname"><span class="pre">getUnitDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.UnitDef.html#PyMaterialXCore.UnitDef" title="PyMaterialXCore.UnitDef"><span class="pre">UnitDef</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getUnitDef" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getUnitDefs">
+<span class="sig-name descname"><span class="pre">getUnitDefs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="PyMaterialXCore.UnitDef.html#PyMaterialXCore.UnitDef" title="PyMaterialXCore.UnitDef"><span class="pre">UnitDef</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getUnitDefs" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getUnitTypeDef">
+<span class="sig-name descname"><span class="pre">getUnitTypeDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.UnitTypeDef.html#PyMaterialXCore.UnitTypeDef" title="PyMaterialXCore.UnitTypeDef"><span class="pre">UnitTypeDef</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getUnitTypeDef" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getUnitTypeDefs">
+<span class="sig-name descname"><span class="pre">getUnitTypeDefs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="PyMaterialXCore.UnitTypeDef.html#PyMaterialXCore.UnitTypeDef" title="PyMaterialXCore.UnitTypeDef"><span class="pre">UnitTypeDef</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getUnitTypeDefs" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getVariantSet">
+<span class="sig-name descname"><span class="pre">getVariantSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.VariantSet.html#PyMaterialXCore.VariantSet" title="PyMaterialXCore.VariantSet"><span class="pre">VariantSet</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getVariantSet" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.getVariantSets">
+<span class="sig-name descname"><span class="pre">getVariantSets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="PyMaterialXCore.VariantSet.html#PyMaterialXCore.VariantSet" title="PyMaterialXCore.VariantSet"><span class="pre">VariantSet</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.getVariantSets" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.hasColorManagementConfig">
+<span class="sig-name descname"><span class="pre">hasColorManagementConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.hasColorManagementConfig" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.hasColorManagementSystem">
+<span class="sig-name descname"><span class="pre">hasColorManagementSystem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.hasColorManagementSystem" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.importLibrary">
+<span class="sig-name descname"><span class="pre">importLibrary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.importLibrary" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.initialize">
+<span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.initialize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.removeAttributeDef">
+<span class="sig-name descname"><span class="pre">removeAttributeDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.removeAttributeDef" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.removeCollection">
+<span class="sig-name descname"><span class="pre">removeCollection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.removeCollection" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.removeGeomInfo">
+<span class="sig-name descname"><span class="pre">removeGeomInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.removeGeomInfo" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.removeGeomPropDef">
+<span class="sig-name descname"><span class="pre">removeGeomPropDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.removeGeomPropDef" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.removeImplementation">
+<span class="sig-name descname"><span class="pre">removeImplementation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.removeImplementation" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.removeLook">
+<span class="sig-name descname"><span class="pre">removeLook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.removeLook" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.removeLookGroup">
+<span class="sig-name descname"><span class="pre">removeLookGroup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.removeLookGroup" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.removeNodeDef">
+<span class="sig-name descname"><span class="pre">removeNodeDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.removeNodeDef" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.removeNodeGraph">
+<span class="sig-name descname"><span class="pre">removeNodeGraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.removeNodeGraph" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.removePropertySet">
+<span class="sig-name descname"><span class="pre">removePropertySet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.removePropertySet" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.removeTargetDef">
+<span class="sig-name descname"><span class="pre">removeTargetDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.removeTargetDef" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.removeTypeDef">
+<span class="sig-name descname"><span class="pre">removeTypeDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.removeTypeDef" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.removeUnitDef">
+<span class="sig-name descname"><span class="pre">removeUnitDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.removeUnitDef" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.removeUnitTypeDef">
+<span class="sig-name descname"><span class="pre">removeUnitTypeDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.removeUnitTypeDef" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.removeVariantSet">
+<span class="sig-name descname"><span class="pre">removeVariantSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.removeVariantSet" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.setColorManagementConfig">
+<span class="sig-name descname"><span class="pre">setColorManagementConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.setColorManagementConfig" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.setColorManagementSystem">
+<span class="sig-name descname"><span class="pre">setColorManagementSystem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.setColorManagementSystem" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Document.upgradeVersion">
+<span class="sig-name descname"><span class="pre">upgradeVersion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXCore.Document.upgradeVersion" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/MaterialXLogo_200x155.png" alt="Logo" />
+    
+  </a>
+</p>
+
+
+
+<p class="blurb">
+<b>MaterialX</b> &ndash; An open standard for the exchange of rich material and
+look-development content across applications and renderers.
+<p>
+  <a title="MaterialX on GitHub" class="blueButton" href="https://github.com/AcademySoftwareFoundation/MaterialX">GitHub</a>
+  &nbsp;
+  <a title="MaterialX on Mastodon" class="blueButton" href="https://mastodon.social/&#64;MaterialX&#64;fosstodon.org">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+         alt="MaterialX on Mastodon" title="MaterialX on Mastodon" viewBox="0 0 24 24"
+         width="16" height="16" style="vertical-align: text-top;">
+      <title>MaterialX on Mastodon</title>
+      <g transform="translate(-1, 0) scale(0.32, 0.32)" fill="#d2dbde">
+        <path d="M74.7135 16.6043C73.6199 8.54587 66.5351 2.19527 58.1366 0.964691C56.7196 0.756754 51.351 0 38.9148 0H38.822C26.3824 0 23.7135 0.756754 22.2966 0.964691C14.1319 2.16118 6.67571 7.86752 4.86669 16.0214C3.99657 20.0369 3.90371 24.4888 4.06535 28.5726C4.29578 34.4289 4.34049 40.275 4.877 46.1075C5.24791 49.9817 5.89495 53.8251 6.81328 57.6088C8.53288 64.5968 15.4938 70.4122 22.3138 72.7848C29.6155 75.259 37.468 75.6697 44.9919 73.971C45.8196 73.7801 46.6381 73.5586 47.4475 73.3063C49.2737 72.7302 51.4164 72.086 52.9915 70.9542C53.0131 70.9384 53.0308 70.9178 53.0433 70.8942C53.0558 70.8706 53.0628 70.8445 53.0637 70.8179V65.1661C53.0634 65.1412 53.0574 65.1167 53.0462 65.0944C53.035 65.0721 53.0189 65.0525 52.9992 65.0371C52.9794 65.0218 52.9564 65.011 52.9318 65.0056C52.9073 65.0002 52.8819 65.0003 52.8574 65.0059C48.0369 66.1472 43.0971 66.7193 38.141 66.7103C29.6118 66.7103 27.3178 62.6981 26.6609 61.0278C26.1329 59.5842 25.7976 58.0784 25.6636 56.5486C25.6622 56.5229 25.667 56.4973 25.6775 56.4738C25.688 56.4502 25.7039 56.4295 25.724 56.4132C25.7441 56.397 25.7678 56.3856 25.7931 56.3801C25.8185 56.3746 25.8448 56.3751 25.8699 56.3816C30.6101 57.5151 35.4693 58.0873 40.3455 58.086C41.5183 58.086 42.6876 58.086 43.8604 58.0553C48.7647 57.919 53.9339 57.6701 58.7591 56.7361C58.8794 56.7123 58.9998 56.6918 59.103 56.6611C66.7139 55.2124 73.9569 50.665 74.6929 39.1501C74.7204 38.6967 74.7892 34.4016 74.7892 33.9312C74.7926 32.3325 75.3085 22.5901 74.7135 16.6043ZM62.9996 45.3371H54.9966V25.9069C54.9966 21.8163 53.277 19.7302 49.7793 19.7302C45.9343 19.7302 44.0083 22.1981 44.0083 27.0727V37.7082H36.0534V27.0727C36.0534 22.1981 34.124 19.7302 30.279 19.7302C26.8019 19.7302 25.0651 21.8163 25.0617 25.9069V45.3371H17.0656V25.3172C17.0656 21.2266 18.1191 17.9769 20.2262 15.568C22.3998 13.1648 25.2509 11.9308 28.7898 11.9308C32.8859 11.9308 35.9812 13.492 38.0447 16.6111L40.036 19.9245L42.0308 16.6111C44.0943 13.492 47.1896 11.9308 51.2788 11.9308C54.8143 11.9308 57.6654 13.1648 59.8459 15.568C61.9529 17.9746 63.0065 21.2243 63.0065 25.3172L62.9996 45.3371Z"></path>
+      </g>
+    </svg>
+  </a>
+</p>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../MainPage.html">MaterialX Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GraphEditor.html">MaterialX Graph Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Viewer.html">MaterialX Viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ShaderGeneration.html">Shader Generation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MaterialX Python Modules:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../PyMaterialXCore.html">PyMaterialXCore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PyMaterialXFormat.html">PyMaterialXFormat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PyMaterialXGenShader.html">PyMaterialXGenShader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PyMaterialXGenGlsl.html">PyMaterialXGenGlsl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PyMaterialXGenOsl.html">PyMaterialXGenOsl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PyMaterialXGenMdl.html">PyMaterialXGenMdl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PyMaterialXGenMsl.html">PyMaterialXGenMsl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PyMaterialXRender.html">PyMaterialXRender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PyMaterialXRenderGlsl.html">PyMaterialXRenderGlsl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PyMaterialXRenderOsl.html">PyMaterialXRenderOsl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PyMaterialXRenderMsl.html">PyMaterialXRenderMsl</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="https://materialx.org/">MaterialX.org</a></li>
+    
+    <li class="toctree-l1"><a href="https://materialx.org/docs/api/index.html">MaterialX C++ API Docs</a></li>
+    
+    <li class="toctree-l1"><a href="https://materialx.org/Specification.html">MaterialX Specification</a></li>
+    
+</ul>
+
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024 MaterialX Authors.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.0.2</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../../_sources/generated/elements/PyMaterialXCore.Document.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

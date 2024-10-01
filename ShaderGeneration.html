@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Shader Generation &#8212; MaterialX 1.39.2 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b20cc3f5" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=c058f7c8" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=d8f72ed4" />
+    <script src="_static/documentation_options.js?v=e2b5d38d"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="PyMaterialXCore" href="generated/PyMaterialXCore.html" />
+    <link rel="prev" title="MaterialX Viewer" href="Viewer.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="shader-generation">
+<h1>Shader Generation<a class="headerlink" href="#shader-generation" title="Link to this heading">¶</a></h1>
+<section id="scope">
+<h2>1.1 Scope<a class="headerlink" href="#scope" title="Link to this heading">¶</a></h2>
+<p>A shader generation framework is implemented as part of MaterialX. This can help applications to transform the agnostic MaterialX data description into executable shader code for a specific renderer. A library module named MaterialXGenShader contains the core shader generation features, and support for specific languages resides in separate libraries, e.g. <a class="reference external" href="https://github.com/AcademySoftwareFoundation/MaterialX/tree/main/source/MaterialXGenGlsl">MaterialXGenGlsl</a>, <a class="reference external" href="https://github.com/AcademySoftwareFoundation/MaterialX/tree/main/source/MaterialXGenOsl">MaterialXGenOsl</a>.</p>
+<p>Note that this system has no runtime and the output produced is source code, not binary executable code. The source code produced needs to be compiled by a shading language compiler before being executed by the renderer. See Figure 1 for a high level overview of the system.</p>
+<p><img alt="Shader generation with multiple shader generators" src="https://raw.githubusercontent.com/AcademySoftwareFoundation/MaterialX/main/documents/Images/shadergen.png" /></p>
+<p><strong>Figure 1:</strong> Shader generation with multiple shader generators.</p>
+</section>
+<section id="languages-and-shader-generators">
+<h2>1.2 Languages and Shader Generators<a class="headerlink" href="#languages-and-shader-generators" title="Link to this heading">¶</a></h2>
+<p>The MaterialX description is free from device specific details and all implementation details needs to be taken care of by shader generators. There is one shader generator for each supported shading language. However for each language there can also be variations needed for different renderers. For example; OpenGL renderers supporting GLSL can use forward rendering or deferred rendering, each with very different requirements for how the shaders are constructed. Another example is different renderers supporting OSL but with different sets of closures or closure parameters. Hence a separate shader generator can be defined for each language/target combination.</p>
+<p>Class inheritance and specialization is used to create support for new languages or to customize existing language support for a new target. To add a new shader generator for a target you add a new C++ class derived from the base class <code class="docutils literal notranslate"><span class="pre">ShaderGenerator</span></code>, or one of the existing derived shader generator classes (<code class="docutils literal notranslate"><span class="pre">GlslShaderGenerator</span></code>, <code class="docutils literal notranslate"><span class="pre">OslShaderGenerator</span></code>, etc.), and override the methods you need to customize. You might also need to derive a new <code class="docutils literal notranslate"><span class="pre">Syntax</span></code> class, which is used to handle syntactical differences between different shading languages. Then you need to make sure there are implementations defined for all the nodes you want to support, standard library nodes and nodes from other libraries, by either reusing existing implementations where applicable or adding in new ones. See <strong>1.3 Node Implementations</strong> on how that is done.</p>
+<p>Note that a shader generator doesn’t need to be defined at the time when node definitions are added. New shader generators can be added later, and node implementations for new targets can be added for existing nodes.</p>
+</section>
+<section id="node-implementations">
+<h2>1.3 Node Implementations<a class="headerlink" href="#node-implementations" title="Link to this heading">¶</a></h2>
+<p>There are four different methods to define the implementation of a node:</p>
+<ol class="arabic simple">
+<li><p>Using an inline expression.</p></li>
+<li><p>Using a function written in the target language.</p></li>
+<li><p>Using a nodegraph that defines the operation performed by the node.</p></li>
+<li><p>Using a C++ class that emits code dynamically during shader generation.</p></li>
+</ol>
+<p>In the following sub-sections each of these methods are explained. For all methods the implementation is tied to a specific <code class="docutils literal notranslate"><span class="pre">nodedef</span></code> with a well defined interface of typed inputs and outputs.</p>
+<section id="inline-expression">
+<h3>1.3.1 Inline Expression<a class="headerlink" href="#inline-expression" title="Link to this heading">¶</a></h3>
+<p>Provided code generators support a very simple expression language for inlining code. This is useful for simple nodes where the operation can be expressed as a single line of code. Inlining will reduce the number of function calls and produce more compact code. The syntax to use is the same as the target shading language, with the addition of using the node’s input ports as variables wrapped in double curly brackets: <code class="docutils literal notranslate"><span class="pre">{{input}}</span></code>. The code generator will replace these variables with values assigned or connected to the respective inputs. Figure 2 gives an example.</p>
+<p>Connecting the expression to the <code class="docutils literal notranslate"><span class="pre">nodedef</span></code> is done using an <code class="docutils literal notranslate"><span class="pre">&lt;implementation&gt;</span></code> element as seen in
+Figure 2. The first option is to keep inline code in a file. The file extension is used to differentiate inline expressions from source code functions, using <code class="docutils literal notranslate"><span class="pre">filename.inline</span></code>. The second option is to directly embed the inlined code using <code class="docutils literal notranslate"><span class="pre">sourcecode</span></code>. This is the recommended approach for inlining if there the logic can fit on one line of code.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- Node definition elements for node &lt;add&gt; --&gt;</span>
+<span class="nt">&lt;nodedef</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ND_add_float&quot;</span><span class="w"> </span><span class="na">node=</span><span class="s">&quot;add&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;in1&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;float&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;in2&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;float&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;output</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;out&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;float&quot;</span><span class="w"> </span><span class="na">defaultinput=</span><span class="s">&quot;in1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/nodedef&gt;</span>
+<span class="nt">&lt;nodedef</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ND_add_color3&quot;</span><span class="w"> </span><span class="na">node=</span><span class="s">&quot;add&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;color3&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;in1&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;color3&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;in2&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;color3&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;output</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;out&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;color3&quot;</span><span class="w"> </span><span class="na">defaultinput=</span><span class="s">&quot;in1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/nodedef&gt;</span>
+<span class="cm">&lt;!-- ... more types ... --&gt;</span>
+
+<span class="cm">&lt;!-- Implementation elements for node &lt;add&gt; --&gt;</span>
+<span class="nt">&lt;implementation</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;IM_add_float&quot;</span><span class="w"> </span><span class="na">nodedef=</span><span class="s">&quot;ND_add_float&quot;</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;mx_add.inline&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;implementation</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;IM_add_color3&quot;</span><span class="w"> </span><span class="na">nodedef=</span><span class="s">&quot;ND_add_color3&quot;</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;mx_add.inline&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="cm">&lt;!-- ... more types ... --&gt;</span>
+
+<span class="cm">&lt;!-- Node definition elements for node &lt;mix&gt; --&gt;</span>
+<span class="nt">&lt;nodedef</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ND_mix_float&quot;</span><span class="w"> </span><span class="na">node=</span><span class="s">&quot;mix&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;fg&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;float&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;bg&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;float&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;mix&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;float&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;output</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;out&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;float&quot;</span><span class="w"> </span><span class="na">defaultinput=</span><span class="s">&quot;bg&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/nodedef&gt;</span>
+<span class="nt">&lt;nodedef</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ND_mix_color3&quot;</span><span class="w"> </span><span class="na">node=</span><span class="s">&quot;mix&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;fg&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;color3&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;bg&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;color3&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;mix&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;color3&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;output</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;out&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;color3&quot;</span><span class="w"> </span><span class="na">defaultinput=</span><span class="s">&quot;bg&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/nodedef&gt;</span>
+<span class="cm">&lt;!-- ... more types ... --&gt;</span>
+
+<span class="cm">&lt;!-- Implementation elements for node &lt;mix&gt; --&gt;</span>
+<span class="nt">&lt;implementation</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;IM_mix_float&quot;</span><span class="w"> </span><span class="na">nodedef=</span><span class="s">&quot;ND_mix_float&quot;</span><span class="w"> </span><span class="na">sourcecode=</span><span class="s">&quot;mix({{bg}}, {{fg}}, {{mix}})&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;implementation</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;IM_mix_color3&quot;</span><span class="w"> </span><span class="na">nodedef=</span><span class="s">&quot;ND_mix_color3&quot;</span><span class="w"> </span><span class="na">sourcecode=</span><span class="s">&quot;mix({{bg}}, {{fg}}, {{mix}})&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="cm">&lt;!-- ... more types ... --&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// File &#39;mx_add.inline&#39; contains:</span>
+<span class="p">{{</span><span class="n">in1</span><span class="p">}}</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">{{</span><span class="n">in2</span><span class="p">}}</span>
+</pre></div>
+</div>
+<p><strong>Figure 2:</strong> Inline expressions for implementing nodes <code class="docutils literal notranslate"><span class="pre">&lt;add&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;mix&gt;</span></code>. The code for <code class="docutils literal notranslate"><span class="pre">&lt;add&gt;</span></code> is stored in an additional file, while the code for <code class="docutils literal notranslate"><span class="pre">&lt;mix&gt;</span></code> is specified as part of the
+<code class="docutils literal notranslate"><span class="pre">&lt;implemenentation&gt;</span></code> declaration.</p>
+</section>
+<section id="shading-language-function">
+<h3>1.3.2 Shading Language Function<a class="headerlink" href="#shading-language-function" title="Link to this heading">¶</a></h3>
+<p>For nodes that can’t be implemented by inline expressions a function definition can be used instead. The function signature should match the nodedefs interface with inputs and outputs. See Figure 3 for an example. Connecting the source code to the nodedef is done using an <code class="docutils literal notranslate"><span class="pre">&lt;implementation&gt;</span></code> element, see the <a class="reference external" href="https://materialx.org/Specification.html">MaterialX Specification</a> for more information.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- Node definition element --&gt;</span>
+<span class="nt">&lt;nodedef</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ND_image_color3&quot;</span><span class="w"> </span><span class="na">node=</span><span class="s">&quot;image&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;file&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;filename&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="na">uniform=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;layer&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;string&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="na">uniform=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;color3&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0.0, 0.0, 0.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;texcoord&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;vector2&quot;</span><span class="w"> </span><span class="na">defaultgeomprop=</span><span class="s">&quot;UV0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;uaddressmode&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;string&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;periodic&quot;</span><span class="w"> </span><span class="na">uniform=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;vaddressmode&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;string&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;periodic&quot;</span><span class="w"> </span><span class="na">uniform=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;filtertype&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;string&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;linear&quot;</span><span class="w"> </span><span class="na">uniform=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;framerange&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;string&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="na">uniform=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;frameoffset&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;integer&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">uniform=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;frameendaction&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;string&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;constant&quot;</span><span class="w"> </span><span class="na">uniform=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;output</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;out&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;color3&quot;</span><span class="w"> </span><span class="na">default=</span><span class="s">&quot;0.0, 0.0, 0.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/nodedef&gt;</span>
+
+<span class="cm">&lt;!-- Implementation element --&gt;</span>
+<span class="nt">&lt;implementation</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;IM_image_color3_osl&quot;</span><span class="w"> </span><span class="na">nodedef=</span><span class="s">&quot;ND_image_color3&quot;</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;mx_image_color3.osl&quot;</span><span class="w"> </span><span class="na">target=</span><span class="s">&quot;genosl&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// File &#39;mx_image_color3.osl&#39; contains:</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">mx_image_color3</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">file</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">layer</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="n">defaultvalue</span><span class="p">,</span>
+<span class="w">                     </span><span class="n">vector2</span><span class="w"> </span><span class="n">texcoord</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">uaddressmode</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">vaddressmode</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">filtertype</span><span class="p">,</span>
+<span class="w">                     </span><span class="n">string</span><span class="w"> </span><span class="n">framerange</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">frameoffset</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">frameendaction</span><span class="p">,</span>
+<span class="w">                     </span><span class="n">output</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="n">out</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Sample the texture</span>
+<span class="w">    </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">texture</span><span class="p">(</span><span class="n">file</span><span class="p">,</span><span class="w"> </span><span class="n">texcoord</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">texcoord</span><span class="p">.</span><span class="n">y</span><span class="p">,</span>
+<span class="w">                  </span><span class="s">&quot;interp&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">filtertype</span><span class="p">,</span>
+<span class="w">                  </span><span class="s">&quot;subimage&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">layer</span><span class="p">,</span>
+<span class="w">                  </span><span class="s">&quot;missingcolor&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">defaultvalue</span><span class="p">,</span>
+<span class="w">                  </span><span class="s">&quot;wrap&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">uaddressmode</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Figure 3:</strong> Shading language function’s implementation for node <code class="docutils literal notranslate"><span class="pre">&lt;image&gt;</span></code> in OSL.</p>
+</section>
+<section id="node-graph-implementation">
+<h3>1.3.3 Node Graph Implementation<a class="headerlink" href="#node-graph-implementation" title="Link to this heading">¶</a></h3>
+<p>As an alternative to defining source code, there is also an option to reference a nodegraph as the implementation of a nodedef. The only requirement is that the nodegraph and nodedef have matching inputs and outputs.</p>
+<p>This is useful for creating a compound for a set of nodes performing some common operation. It can then be referenced as a node inside other nodegraphs. It is also useful for creating compatibility graphs for unknown nodes. If a node is created by some third party, and its implementation is unknown or proprietary, a compatibility graph can be created using known nodes and be referenced as a stand-in implementation. Linking a nodegraph to a nodedef is done by simply setting a nodedef attribute on the nodegraph definition. See Figure 4 for an example.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;nodedef</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ND_checker_float&quot;</span><span class="w"> </span><span class="na">node=</span><span class="s">&quot;checker&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;texcoord&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;vector2&quot;</span><span class="w"> </span><span class="na">defaultgeomprop=</span><span class="s">&quot;UV0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;uvtiling&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;vector2&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;8.0, 8.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;output</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;out&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;float&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/nodedef&gt;</span>
+<span class="nt">&lt;nodegraph</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;IM_checker_float&quot;</span><span class="w"> </span><span class="na">nodedef=</span><span class="s">&quot;ND_checker_float&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;multiply</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;mult1&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;vector2&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;in1&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;vector2&quot;</span><span class="w"> </span><span class="na">interfacename=</span><span class="s">&quot;texcoord&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;in2&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;vector2&quot;</span><span class="w"> </span><span class="na">interfacename=</span><span class="s">&quot;uvtiling&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/multiply&gt;</span>
+<span class="w">  </span><span class="nt">&lt;floor</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;floor1&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;vector2&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;in&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;vector2&quot;</span><span class="w"> </span><span class="na">nodename=</span><span class="s">&quot;mult1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/floor&gt;</span>
+<span class="w">  </span><span class="nt">&lt;dotproduct</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;dotproduct1&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;float&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;in1&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;vector2&quot;</span><span class="w"> </span><span class="na">nodename=</span><span class="s">&quot;floor1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;in2&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;vector2&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;1, 1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/dotproduct&gt;</span>
+<span class="w">  </span><span class="nt">&lt;modulo</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;modulo1&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;float&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;in1&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;float&quot;</span><span class="w"> </span><span class="na">nodename=</span><span class="s">&quot;dotproduct1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;input</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;in2&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;float&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/modulo&gt;</span>
+<span class="w">  </span><span class="nt">&lt;output</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;out&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;float&quot;</span><span class="w"> </span><span class="na">nodename=</span><span class="s">&quot;modulo1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/nodegraph&gt;</span>
+</pre></div>
+</div>
+<p><strong>Figure 4:</strong> Checker node implementation using a nodegraph.</p>
+</section>
+<section id="dynamic-code-generation">
+<h3>1.3.4 Dynamic Code Generation<a class="headerlink" href="#dynamic-code-generation" title="Link to this heading">¶</a></h3>
+<p>In some situations static source code is not enough to implement a node. The code might need to be customized depending on parameters set on the node. Or for a hardware render target vertex streams or uniform inputs might need to be created in order to supply the data needed for the node implementation.</p>
+<p>In this case, a C++ class can be added to handle the implementation of the node. The class should be derived from the base class <code class="docutils literal notranslate"><span class="pre">ShaderNodeImpl</span></code>. It should specify what target it is for by overriding <code class="docutils literal notranslate"><span class="pre">getTarget()</span></code>. It then needs to be registered for a <code class="docutils literal notranslate"><span class="pre">ShaderGenerator</span></code> by calling <code class="docutils literal notranslate"><span class="pre">ShaderGenerator::registerImplementation()</span></code>. See Figure 5 for an example.</p>
+<p>When a <code class="docutils literal notranslate"><span class="pre">ShaderNodeImpl</span></code> class is used for a nodedef the corresponding <code class="docutils literal notranslate"><span class="pre">&lt;implementation&gt;</span></code> element doesn’t need a file attribute, since no static source code is used. The <code class="docutils literal notranslate"><span class="pre">&lt;implementation&gt;</span></code> element will then act only as a declaration that there exists an implementation for the nodedef for a particular target.</p>
+<p>Note that by using a <code class="docutils literal notranslate"><span class="pre">ShaderNodeImpl</span></code> class for your node’s implementation it is no longer data driven, as in the other three methods above. So it’s recommended to use this only when inline expressions or static source code functions are not enough to handle the implementation of a node.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">/// Implementation of ’foo&#39; node for OSL</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">FooOsl</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">ShaderNodeImpl</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="n">ShaderNodeImplPtr</span><span class="w"> </span><span class="n">create</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">FooOsl</span><span class="o">&gt;</span><span class="p">();</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">getTarget</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">OslShaderGenerator</span><span class="o">::</span><span class="n">TARGET</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">emitFunctionDefinition</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ShaderNode</span><span class="o">&amp;</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="n">GenContext</span><span class="o">&amp;</span><span class="w"> </span><span class="n">context</span><span class="p">,</span>
+<span class="w">                                </span><span class="n">ShaderStage</span><span class="o">&amp;</span><span class="w"> </span><span class="n">stage</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">override</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Emit function definition if needed for the node</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">emitFunctionCall</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ShaderNode</span><span class="o">&amp;</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="n">GenContext</span><span class="o">&amp;</span><span class="w"> </span><span class="n">context</span><span class="p">,</span>
+<span class="w">                          </span><span class="n">ShaderStage</span><span class="o">&amp;</span><span class="w"> </span><span class="n">stage</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">override</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Emit function call, or inline shader code, for the node</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">OslShaderGenerator</span><span class="o">::</span><span class="n">OslShaderGenerator</span><span class="p">()</span><span class="w"> </span><span class="o">:</span>
+<span class="w">    </span><span class="n">ShaderGenerator</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">OslSyntax</span><span class="o">&gt;</span><span class="p">())</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">    </span><span class="c1">// Register foo implementation for nodedefs it should be used for</span>
+<span class="w">    </span><span class="n">registerImplementation</span><span class="p">(</span><span class="s">&quot;IM_foo_color2_osl&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">FooOsl</span><span class="o">::</span><span class="n">create</span><span class="p">);</span>
+<span class="w">    </span><span class="n">registerImplementation</span><span class="p">(</span><span class="s">&quot;IM_foo_color3_osl&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">FooOsl</span><span class="o">::</span><span class="n">create</span><span class="p">);</span>
+<span class="w">    </span><span class="n">registerImplementation</span><span class="p">(</span><span class="s">&quot;IM_foo_color4_osl&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">FooOsl</span><span class="o">::</span><span class="n">create</span><span class="p">);</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Figure 5:</strong> C++ class for dynamic code generation.</p>
+</section>
+</section>
+<section id="shader-generation-steps">
+<h2>1.4 Shader Generation Steps<a class="headerlink" href="#shader-generation-steps" title="Link to this heading">¶</a></h2>
+<p>This section outlines the steps taken in general to produce a shader from the MaterialX description. The <code class="docutils literal notranslate"><span class="pre">ShaderGenerator</span></code> base class and its supporting classes will handle this for you, but it’s good to know the steps involved if custom changes are needed to support a new target.</p>
+<p>Shader generation supports generating a shader starting from either an <code class="docutils literal notranslate"><span class="pre">output</span></code> element or a <code class="docutils literal notranslate"><span class="pre">shaderref</span></code> element in a material. The <code class="docutils literal notranslate"><span class="pre">output</span></code> can be an output port on a nodegraph or an output element inserted anywhere in a node network. A shader is generated by calling your shader generator class with either of these element types as input. The given element and all dependencies upstream will be translated into a single monolithic shader in the target shading language.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Generate a shader starting from the given element, translating</span>
+<span class="c1">// the element and all dependencies upstream into shader code.</span>
+<span class="n">ShaderPtr</span><span class="w"> </span><span class="n">ShaderGenerator</span><span class="o">::</span><span class="n">generate</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">,</span>
+<span class="w">                                    </span><span class="n">ElementPtr</span><span class="w"> </span><span class="n">element</span><span class="p">,</span>
+<span class="w">                                    </span><span class="n">GenContext</span><span class="o">&amp;</span><span class="w"> </span><span class="n">context</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The shader generation process can be divided into initialization and code generation. The initialization consists of a number of steps:</p>
+<ol class="arabic simple">
+<li><p>Create an optimized version of the graph as a tree with the given input element as root, and with only the used dependencies connected upstream. This involves removing unused paths in the graph, converting constant nodes to constant values, and adding in any default nodes for ports that are unconnected but have default connections specified. Removal of unused paths typically involves constant folding and pruning of conditional branches that will never be taken. Since the resulting shader in the end will be compiled by a shading language compiler, and receive a lot of additional optimizations, we don’t need to do too much work in this optimization step. However, a few graph level optimizations can make the resulting shader a lot smaller and save time and memory during shader compilation. It will also produce more readable source code which is good for debugging purposes. This optimization step is also a good place to do other custom optimizations needed by a particular target. For example simplification of the graph, which could involve substituting expensive nodes with approximate nodes, identification of common subgraphs that can be merged, etc.</p></li>
+<li><p>The nodes are sorted in topological order. Since a node can be referenced by many other nodes in the graph we need an ordering of the nodes so that nodes that have a dependency on other nodes come after all dependent nodes. This step also makes sure there are no cyclic dependencies in the graph.</p></li>
+<li><p>The stages for the shader are created. For a HW shader this is normally a vertex stage and a pixel stage, but other stages can be added as needed. At the minumum a single pixel stage is required, so even shaders that has no concept of multiple stages, like OSL, needs to have a single pixel stage created.</p></li>
+<li><p>The shader stages interface of uniforms and varyings are established. This consists of the graph interface ports that are in use, as well as internal ports that have been published to the interface (an example of the latter is for a hardware shader generator where image texture filenames get converted to texture samplers which needs to be published in order to be bound by the target application). Each node in the graph is also called for a chance to create any uniforms or varyings needed by its implementation.</p></li>
+<li><p>Information about scope is tracked for each node. This information is needed to handle branching by conditional nodes. For example, if a node is used only by a particular branch on a varying conditional we want to calculate this node only inside that scope, when that corresponding branch is taken. A node can be used in global scope, in a single conditional scope or by multiple conditional scopes.</p></li>
+</ol>
+<p>The output from the initialization step is a new graph representation constructed using the classes <code class="docutils literal notranslate"><span class="pre">ShaderNode</span></code>, <code class="docutils literal notranslate"><span class="pre">ShaderInput</span></code>, <code class="docutils literal notranslate"><span class="pre">ShaderOutput</span></code>, <code class="docutils literal notranslate"><span class="pre">ShaderGraph</span></code>, etc. This is a graph representation optimized for shader generation with quick access and traversal of nodes and ports, as well as caching of extra information needed by shader generation.</p>
+<p>After initialization the code generation steps are handled by the <code class="docutils literal notranslate"><span class="pre">ShaderGenerator</span></code> class and derived classes. This part is specific to the particular generator being used, but in general it consists of the following steps:</p>
+<ol class="arabic simple">
+<li><p>Typedefs are emitted as specified by the Syntax class.</p></li>
+<li><p>Function definitions are emitted for all the atomic nodes that have shading
+language functions for their implementations. For nodes using dynamic code generation their <code class="docutils literal notranslate"><span class="pre">ShaderNodeImpl</span></code> instances are called to generate the functions. For nodes that are implemented by graphs a function definition representing the graph computation is emitted.</p></li>
+<li><p>The shader signature is emitted with all uniforms set to default values. The shader uniforms can later be accessed on the returned <code class="docutils literal notranslate"><span class="pre">Shader</span></code> instance in order for applications to be able to bind values to them.</p></li>
+<li><p>The function calls for all nodes are emitted, in the right dependency order, propagating
+output results from upstream nodes as inputs to downstream nodes. Inline expressions are
+emitted instead of functions calls for nodes that use this.</p></li>
+<li><p>The final shader output is produced and assigned to the shader output variable.</p></li>
+</ol>
+<p>Note that if a single monolithic shader for the whole graph is not appropriate for your system the generator can be called on <code class="docutils literal notranslate"><span class="pre">output</span></code> elements at any point in your graph, and generate code for sub-parts. It is then up to the application to decide where to split the graph, and to assemble the shader code for sub-parts after all have been generated.</p>
+</section>
+<section id="shader-stages">
+<h2>1.5 Shader Stages<a class="headerlink" href="#shader-stages" title="Link to this heading">¶</a></h2>
+<p>Creation of multiple shader stages is supported. This is needed in order to generate separate code for multiple stages on hardware render targets. A <code class="docutils literal notranslate"><span class="pre">pixel</span></code> stage must always be created by all targets, even for shading languages like OSL that natively doensn’t have a concept of stages. The stage is where the generated shader code is stored as well as all uniforms, inputs and outputs for the shader. This is handled by the <code class="docutils literal notranslate"><span class="pre">ShaderStage</span></code> class, and the data can be retrieved from it when generation is completed.</p>
+<p>One or more <code class="docutils literal notranslate"><span class="pre">ShaderStage</span></code> instances are created and stored on the <code class="docutils literal notranslate"><span class="pre">Shader</span></code> class. In addition to the <code class="docutils literal notranslate"><span class="pre">pixel</span></code> stage, hardware generators always specify a <code class="docutils literal notranslate"><span class="pre">vertex</span></code> stage. If additional stages are needed they can be added as well. When creating shader input variables you specify which stage the variable should be used in, see 1.7 for more information on shader variable creation.</p>
+<p>Node implementations using static source code (function or inline expressions) are always emitted to the <code class="docutils literal notranslate"><span class="pre">pixel</span></code> stage. Controlling the <code class="docutils literal notranslate"><span class="pre">vertex</span></code> stage, or other stages, is not supported using static source code. In order to do that you must use dynamic code generation with a custom <code class="docutils literal notranslate"><span class="pre">ShaderNodeImpl</span></code> sub-class for your node. You are then able to control how it affects all stages separately. Inside <code class="docutils literal notranslate"><span class="pre">emitFunctionDefinition</span></code> and <code class="docutils literal notranslate"><span class="pre">emitFunctionCall</span></code> you can add separate sections for each stage using begin/end shader stage macros. Figure 6 shows how the texcoord node for GLSL is emitting different code into the <code class="docutils literal notranslate"><span class="pre">vertex</span></code> and <code class="docutils literal notranslate"><span class="pre">pixel</span></code> stages.</p>
+</section>
+<section id="shader-variables">
+<h2>1.6 Shader Variables<a class="headerlink" href="#shader-variables" title="Link to this heading">¶</a></h2>
+<p>When generating a shader from a node graph or shaderref the inputs and parameters on those elements will be published as shader uniforms on the resulting shader. A listing of the created uniforms can be read from the produced <code class="docutils literal notranslate"><span class="pre">Shader</span></code> and <code class="docutils literal notranslate"><span class="pre">ShaderStage</span></code> instances. The shader uniforms can then be presented to the user and have their values set by the application.</p>
+<section id="variable-creation">
+<h3>1.6.1 Variable Creation<a class="headerlink" href="#variable-creation" title="Link to this heading">¶</a></h3>
+<p>Adding new uniforms, input and outputs to a shader stage is done by first creating a <code class="docutils literal notranslate"><span class="pre">VariableBlock</span></code> to store them. There are some predefined identifiers for commonly used variable blocks. For uniforms there are e.g. one named <code class="docutils literal notranslate"><span class="pre">HW::PUBLIC_UNIFORMS</span></code> and another named <code class="docutils literal notranslate"><span class="pre">HW::PRIVATE_UNIFORMS</span></code>. Public is used for uniforms to be published to the user, as described above, and private is used for uniforms needed by node implementations but set by the application and not published. For hardware targets there are also specific variable blocks called <code class="docutils literal notranslate"><span class="pre">connector</span> <span class="pre">blocks</span></code> which are used to send data from one stage to another, connecting the stages. A connector block named <code class="docutils literal notranslate"><span class="pre">HW::VERTEX_DATA</span></code> is used for sending data from the  <code class="docutils literal notranslate"><span class="pre">vertex</span></code> stage to the <code class="docutils literal notranslate"><span class="pre">pixel</span></code> stage. Variable block creation and handling can be customized as needed by each shader generator target.</p>
+<p>All variable blocks can be queried and accessed by the application from the <code class="docutils literal notranslate"><span class="pre">ShaderStage</span></code> instances after generation.</p>
+<p>Figure 6 shows how creation of shader inputs and connector variables are done for a node implementation that requires this.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Implementation of &#39;texcoord&#39; node for GLSL</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">TexCoordGlsl</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">ShaderNodeImpl</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="n">ShaderNodeImplPtr</span><span class="w"> </span><span class="n">create</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">TexCoordGlsl</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">TexCoordNodeGlsl</span><span class="o">::</span><span class="n">createVariables</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ShaderNode</span><span class="o">&amp;</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="n">GenContext</span><span class="o">&amp;</span><span class="p">,</span>
+<span class="w">                                           </span><span class="n">Shader</span><span class="o">&amp;</span><span class="w"> </span><span class="n">shader</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">ShaderOutput</span><span class="o">*</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">node</span><span class="p">.</span><span class="n">getOutput</span><span class="p">();</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">ShaderInput</span><span class="o">*</span><span class="w"> </span><span class="n">indexInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">node</span><span class="p">.</span><span class="n">getInput</span><span class="p">(</span><span class="n">INDEX</span><span class="p">);</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">indexInput</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">indexInput</span><span class="o">-&gt;</span><span class="n">getValue</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getValueString</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;0&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">ShaderStage</span><span class="o">&amp;</span><span class="w"> </span><span class="n">vs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shader</span><span class="p">.</span><span class="n">getStage</span><span class="p">(</span><span class="n">Stage</span><span class="o">::</span><span class="n">VERTEX</span><span class="p">);</span>
+<span class="w">        </span><span class="n">ShaderStage</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shader</span><span class="p">.</span><span class="n">getStage</span><span class="p">(</span><span class="n">Stage</span><span class="o">::</span><span class="n">PIXEL</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">addStageInput</span><span class="p">(</span><span class="n">HW</span><span class="o">::</span><span class="n">VERTEX_INPUTS</span><span class="p">,</span><span class="w"> </span><span class="n">output</span><span class="o">-&gt;</span><span class="n">getType</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;i_texcoord_&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">vs</span><span class="p">);</span>
+<span class="w">        </span><span class="n">addStageConnector</span><span class="p">(</span><span class="n">HW</span><span class="o">::</span><span class="n">VERTEX_DATA</span><span class="p">,</span><span class="w"> </span><span class="n">output</span><span class="o">-&gt;</span><span class="n">getType</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;texcoord_&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">vs</span><span class="p">,</span><span class="w"> </span><span class="n">ps</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">TexCoordNodeGlsl</span><span class="o">::</span><span class="n">emitFunctionCall</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ShaderNode</span><span class="o">&amp;</span><span class="w"> </span><span class="n">node</span><span class="p">,</span>
+<span class="w">                                            </span><span class="n">GenContext</span><span class="o">&amp;</span><span class="w"> </span><span class="n">context</span><span class="p">,</span>
+<span class="w">                                            </span><span class="n">ShaderStage</span><span class="o">&amp;</span><span class="w"> </span><span class="n">stage</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">ShaderGenerator</span><span class="o">&amp;</span><span class="w"> </span><span class="n">shadergen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="n">getShaderGenerator</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">ShaderInput</span><span class="o">*</span><span class="w"> </span><span class="n">indexInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">node</span><span class="p">.</span><span class="n">getInput</span><span class="p">(</span><span class="n">INDEX</span><span class="p">);</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">indexInput</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">indexInput</span><span class="o">-&gt;</span><span class="n">getValue</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getValueString</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;0&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;texcoord_&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">index</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">DEFINE_SHADER_STAGE</span><span class="p">(</span><span class="n">stage</span><span class="p">,</span><span class="w"> </span><span class="n">Stage</span><span class="o">::</span><span class="n">VERTEX</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">VariableBlock</span><span class="o">&amp;</span><span class="w"> </span><span class="n">vertexData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stage</span><span class="p">.</span><span class="n">getOutputBlock</span><span class="p">(</span><span class="n">HW</span><span class="o">::</span><span class="n">VERTEX_DATA</span><span class="p">);</span>
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">prefix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vertexData</span><span class="p">.</span><span class="n">getInstance</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">ShaderPort</span><span class="o">*</span><span class="w"> </span><span class="n">texcoord</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vertexData</span><span class="p">[</span><span class="n">variable</span><span class="p">];</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">texcoord</span><span class="o">-&gt;</span><span class="n">isEmitted</span><span class="p">())</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">shadergen</span><span class="p">.</span><span class="n">emitLine</span><span class="p">(</span><span class="n">prefix</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">texcoord</span><span class="o">-&gt;</span><span class="n">getVariable</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; = i_&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">variable</span><span class="p">,</span><span class="w"> </span><span class="n">stage</span><span class="p">);</span>
+<span class="w">                </span><span class="n">texcoord</span><span class="o">-&gt;</span><span class="n">setEmitted</span><span class="p">();</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">DEFINE_SHADER_STAGE</span><span class="p">(</span><span class="n">stage</span><span class="p">,</span><span class="w"> </span><span class="n">Stage</span><span class="o">::</span><span class="n">PIXEL</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">VariableBlock</span><span class="o">&amp;</span><span class="w"> </span><span class="n">vertexData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stage</span><span class="p">.</span><span class="n">getInputBlock</span><span class="p">(</span><span class="n">HW</span><span class="o">::</span><span class="n">VERTEX_DATA</span><span class="p">);</span>
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">prefix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vertexData</span><span class="p">.</span><span class="n">getInstance</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">ShaderPort</span><span class="o">*</span><span class="w"> </span><span class="n">texcoord</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vertexData</span><span class="p">[</span><span class="n">variable</span><span class="p">];</span>
+<span class="w">                </span><span class="n">shadergen</span><span class="p">.</span><span class="n">emitLineBegin</span><span class="p">(</span><span class="n">stage</span><span class="p">);</span>
+<span class="w">            </span><span class="n">shadergen</span><span class="p">.</span><span class="n">emitOutput</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">getOutput</span><span class="p">(),</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span><span class="w"> </span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">stage</span><span class="p">);</span>
+<span class="w">            </span><span class="n">shadergen</span><span class="p">.</span><span class="n">emitString</span><span class="p">(</span><span class="s">&quot; = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">prefix</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">texcoord</span><span class="o">-&gt;</span><span class="n">getVariable</span><span class="p">(),</span><span class="w"> </span><span class="n">stage</span><span class="p">);</span>
+<span class="w">            </span><span class="n">shadergen</span><span class="p">.</span><span class="n">emitLineEnd</span><span class="p">(</span><span class="n">stage</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p><strong>Figure 6:</strong> Implementation of node <code class="docutils literal notranslate"><span class="pre">texcoord</span></code> in GLSL. Using a <code class="docutils literal notranslate"><span class="pre">ShaderNodeImpl</span></code> sub-class in order to control shader variable creation and code generation into separate shader stages.</p>
+</section>
+<section id="variable-naming-convention">
+<h3>1.6.2 Variable Naming Convention<a class="headerlink" href="#variable-naming-convention" title="Link to this heading">¶</a></h3>
+<p>Creating shader variables and binding values to them needs to be done in agreement with the shader generator side and application side. The application must know what a variable is for in order to bind meaningful data to it. One way of handling this is by using semantics. All shader variables created can be assigned a semantic if that is used by the target application. Shader generation does not impose a specific set of semantics to use, so for languages and applications that use this any semantics can be used. For languages that do not use semantics a variable naming convention needs to be used instead.</p>
+<p>Built-in shader generators and accompanying node implementations have a naming convention for shader variables. A custom shader generator that derives from and takes advantage of built-in features should preferably use the same convention. Uniform variables are prefixed with <code class="docutils literal notranslate"><span class="pre">u_</span></code> and vertex inputs with <code class="docutils literal notranslate"><span class="pre">i_</span></code> . For languages not using semantics, Figure 7 shows the naming used for variables (inputs and uniforms) with predefined binding rules:</p>
+<p>App data input variables</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>NAME</p></th>
+<th class="head text-center"><p>TYPE</p></th>
+<th class="head text-left"><p>BINDING</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>i_position</p></td>
+<td class="text-center"><p>vec3</p></td>
+<td class="text-left"><p>Vertex position in object space.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>i_normal</p></td>
+<td class="text-center"><p>vec3</p></td>
+<td class="text-left"><p>Vertex normal in object space.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>i_tangent</p></td>
+<td class="text-center"><p>vec3</p></td>
+<td class="text-left"><p>Vertex tangent in object space.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>i_bitangent</p></td>
+<td class="text-center"><p>vec3</p></td>
+<td class="text-left"><p>Vertex bitangent in object space.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>i_texcoord_N</p></td>
+<td class="text-center"><p>vec2</p></td>
+<td class="text-left"><p>Vertex texture coord for N:th uv set.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>i_color_N</p></td>
+<td class="text-center"><p>vec4</p></td>
+<td class="text-left"><p>Vertex color for N:th color set.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Uniform variables</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>NAME</p></th>
+<th class="head text-center"><p>TYPE</p></th>
+<th class="head text-left"><p>BINDING</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>u_worldMatrix</p></td>
+<td class="text-center"><p>mat4</p></td>
+<td class="text-left"><p>World transform.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>u_worldInverseMatrix</p></td>
+<td class="text-center"><p>mat4</p></td>
+<td class="text-left"><p>World transform, inverted.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>u_worldTransposeMatrix</p></td>
+<td class="text-center"><p>mat4</p></td>
+<td class="text-left"><p>World transform, transposed.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>u_worldInverseTransposeMatrix</p></td>
+<td class="text-center"><p>mat4</p></td>
+<td class="text-left"><p>World transform, inverted, transposed.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>u_viewMatrix</p></td>
+<td class="text-center"><p>mat4</p></td>
+<td class="text-left"><p>View transform.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>u_viewInverseMatrix</p></td>
+<td class="text-center"><p>mat4</p></td>
+<td class="text-left"><p>View transform, inverted.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>u_viewTransposeMatrix</p></td>
+<td class="text-center"><p>mat4</p></td>
+<td class="text-left"><p>View transform, transposed.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>u_viewInverseTransposeMatrix</p></td>
+<td class="text-center"><p>mat4</p></td>
+<td class="text-left"><p>View transform, inverted, transposed.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>u_projectionMatrix</p></td>
+<td class="text-center"><p>mat4</p></td>
+<td class="text-left"><p>Projection transform.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>u_projectionInverseMatrix</p></td>
+<td class="text-center"><p>mat4</p></td>
+<td class="text-left"><p>Projection transform, inverted.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>u_projectionTransposeMatrix</p></td>
+<td class="text-center"><p>mat4</p></td>
+<td class="text-left"><p>Projection transform, transposed.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>u_projectionInverseTransposeMatrix</p></td>
+<td class="text-center"><p>mat4</p></td>
+<td class="text-left"><p>Projection transform, inverted, transposed.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>u_worldViewMatrix</p></td>
+<td class="text-center"><p>mat4</p></td>
+<td class="text-left"><p>World-view transform.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>u_viewProjectionMatrix</p></td>
+<td class="text-center"><p>mat4</p></td>
+<td class="text-left"><p>View-projection transform.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>u_worldViewProjectionMatrix</p></td>
+<td class="text-center"><p>mat4</p></td>
+<td class="text-left"><p>World-view-projection transform.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>u_viewPosition</p></td>
+<td class="text-center"><p>vec3</p></td>
+<td class="text-left"><p>World-space position of the viewer.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>u_viewDirection</p></td>
+<td class="text-center"><p>vec3</p></td>
+<td class="text-left"><p>World-space direction of the viewer.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>u_frame</p></td>
+<td class="text-center"><p>float</p></td>
+<td class="text-left"><p>The current frame number as defined by the host application.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>u_time</p></td>
+<td class="text-center"><p>float</p></td>
+<td class="text-left"><p>The current time in seconds.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>u_geomprop_&lt;name&gt;</p></td>
+<td class="text-center"><p>&lt;type&gt;</p></td>
+<td class="text-left"><p>A named property of given &lt;type&gt; where &lt;name&gt; is the name of the variable on the geometry.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>u_numActiveLightSources</p></td>
+<td class="text-center"><p>int</p></td>
+<td class="text-left"><p>The number of currently active light sources. Note that in shader this is clamped against the maximum allowed number of light sources.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>u_lightData[]</p></td>
+<td class="text-center"><p>struct</p></td>
+<td class="text-left"><p>Array of struct LightData holding parameters for active light sources. The <code class="docutils literal notranslate"><span class="pre">LightData</span></code> struct is built dynamically depending on requirements for bound light shaders.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>u_&lt;unitType&gt;UnitTarget[]</p></td>
+<td class="text-center"><p>integer</p></td>
+<td class="text-left"><p>An attribute indicating the target unit for a given unit type definition (&lt;unitType&gt;).</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Figure 7:</strong> Listing of predefined variables with their binding rules.</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/MaterialXLogo_200x155.png" alt="Logo" />
+    
+  </a>
+</p>
+
+
+
+<p class="blurb">
+<b>MaterialX</b> &ndash; An open standard for the exchange of rich material and
+look-development content across applications and renderers.
+<p>
+  <a title="MaterialX on GitHub" class="blueButton" href="https://github.com/AcademySoftwareFoundation/MaterialX">GitHub</a>
+  &nbsp;
+  <a title="MaterialX on Mastodon" class="blueButton" href="https://mastodon.social/&#64;MaterialX&#64;fosstodon.org">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+         alt="MaterialX on Mastodon" title="MaterialX on Mastodon" viewBox="0 0 24 24"
+         width="16" height="16" style="vertical-align: text-top;">
+      <title>MaterialX on Mastodon</title>
+      <g transform="translate(-1, 0) scale(0.32, 0.32)" fill="#d2dbde">
+        <path d="M74.7135 16.6043C73.6199 8.54587 66.5351 2.19527 58.1366 0.964691C56.7196 0.756754 51.351 0 38.9148 0H38.822C26.3824 0 23.7135 0.756754 22.2966 0.964691C14.1319 2.16118 6.67571 7.86752 4.86669 16.0214C3.99657 20.0369 3.90371 24.4888 4.06535 28.5726C4.29578 34.4289 4.34049 40.275 4.877 46.1075C5.24791 49.9817 5.89495 53.8251 6.81328 57.6088C8.53288 64.5968 15.4938 70.4122 22.3138 72.7848C29.6155 75.259 37.468 75.6697 44.9919 73.971C45.8196 73.7801 46.6381 73.5586 47.4475 73.3063C49.2737 72.7302 51.4164 72.086 52.9915 70.9542C53.0131 70.9384 53.0308 70.9178 53.0433 70.8942C53.0558 70.8706 53.0628 70.8445 53.0637 70.8179V65.1661C53.0634 65.1412 53.0574 65.1167 53.0462 65.0944C53.035 65.0721 53.0189 65.0525 52.9992 65.0371C52.9794 65.0218 52.9564 65.011 52.9318 65.0056C52.9073 65.0002 52.8819 65.0003 52.8574 65.0059C48.0369 66.1472 43.0971 66.7193 38.141 66.7103C29.6118 66.7103 27.3178 62.6981 26.6609 61.0278C26.1329 59.5842 25.7976 58.0784 25.6636 56.5486C25.6622 56.5229 25.667 56.4973 25.6775 56.4738C25.688 56.4502 25.7039 56.4295 25.724 56.4132C25.7441 56.397 25.7678 56.3856 25.7931 56.3801C25.8185 56.3746 25.8448 56.3751 25.8699 56.3816C30.6101 57.5151 35.4693 58.0873 40.3455 58.086C41.5183 58.086 42.6876 58.086 43.8604 58.0553C48.7647 57.919 53.9339 57.6701 58.7591 56.7361C58.8794 56.7123 58.9998 56.6918 59.103 56.6611C66.7139 55.2124 73.9569 50.665 74.6929 39.1501C74.7204 38.6967 74.7892 34.4016 74.7892 33.9312C74.7926 32.3325 75.3085 22.5901 74.7135 16.6043ZM62.9996 45.3371H54.9966V25.9069C54.9966 21.8163 53.277 19.7302 49.7793 19.7302C45.9343 19.7302 44.0083 22.1981 44.0083 27.0727V37.7082H36.0534V27.0727C36.0534 22.1981 34.124 19.7302 30.279 19.7302C26.8019 19.7302 25.0651 21.8163 25.0617 25.9069V45.3371H17.0656V25.3172C17.0656 21.2266 18.1191 17.9769 20.2262 15.568C22.3998 13.1648 25.2509 11.9308 28.7898 11.9308C32.8859 11.9308 35.9812 13.492 38.0447 16.6111L40.036 19.9245L42.0308 16.6111C44.0943 13.492 47.1896 11.9308 51.2788 11.9308C54.8143 11.9308 57.6654 13.1648 59.8459 15.568C61.9529 17.9746 63.0065 21.2243 63.0065 25.3172L62.9996 45.3371Z"></path>
+      </g>
+    </svg>
+  </a>
+</p>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="MainPage.html">MaterialX Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GraphEditor.html">MaterialX Graph Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Viewer.html">MaterialX Viewer</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Shader Generation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#scope">1.1 Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#languages-and-shader-generators">1.2 Languages and Shader Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#node-implementations">1.3 Node Implementations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shader-generation-steps">1.4 Shader Generation Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shader-stages">1.5 Shader Stages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shader-variables">1.6 Shader Variables</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">MaterialX Python Modules:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="generated/PyMaterialXCore.html">PyMaterialXCore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/PyMaterialXFormat.html">PyMaterialXFormat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/PyMaterialXGenShader.html">PyMaterialXGenShader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/PyMaterialXGenGlsl.html">PyMaterialXGenGlsl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/PyMaterialXGenOsl.html">PyMaterialXGenOsl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/PyMaterialXGenMdl.html">PyMaterialXGenMdl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/PyMaterialXGenMsl.html">PyMaterialXGenMsl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/PyMaterialXRender.html">PyMaterialXRender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/PyMaterialXRenderGlsl.html">PyMaterialXRenderGlsl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/PyMaterialXRenderOsl.html">PyMaterialXRenderOsl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/PyMaterialXRenderMsl.html">PyMaterialXRenderMsl</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="https://materialx.org/">MaterialX.org</a></li>
+    
+    <li class="toctree-l1"><a href="https://materialx.org/docs/api/index.html">MaterialX C++ API Docs</a></li>
+    
+    <li class="toctree-l1"><a href="https://materialx.org/Specification.html">MaterialX Specification</a></li>
+    
+</ul>
+
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024 MaterialX Authors.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.0.2</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/ShaderGeneration.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
