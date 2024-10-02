@@ -14,7 +14,8 @@
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="PyMaterialXRenderOsl" href="PyMaterialXRenderOsl.html" />
+    <link rel="next" title="PyMaterialXRenderMsl.MslRenderer" href="metal-rendering/PyMaterialXRenderMsl.MslRenderer.html" />
+    <link rel="prev" title="PyMaterialXRenderOsl.OslRenderer" href="osl-rendering/PyMaterialXRenderOsl.OslRenderer.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -34,7 +35,61 @@
             
   <section id="module-PyMaterialXRenderMsl">
 <span id="pymaterialxrendermsl"></span><h1>PyMaterialXRenderMsl<a class="headerlink" href="#module-PyMaterialXRenderMsl" title="Link to this heading">¶</a></h1>
-<p>Module containing Python bindings for the MaterialXRenderMsl library</p>
+<p>Rendering materials using the Metal Shading Language.</p>
+<dl class="field-list simple">
+<dt class="field-odd">see<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://developer.apple.com/metal/">https://developer.apple.com/metal/</a></p>
+</dd>
+<dt class="field-even">see<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://developer.apple.com/documentation/metal">https://developer.apple.com/documentation/metal</a></p>
+</dd>
+</dl>
+<section id="metal-rendering-classes">
+<h2>Metal Rendering Classes<a class="headerlink" href="#metal-rendering-classes" title="Link to this heading">¶</a></h2>
+<p><strong>Class Hierarchy</strong></p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><a class="reference internal" href="core-rendering/PyMaterialXRender.ShaderRenderer.html#PyMaterialXRender.ShaderRenderer" title="PyMaterialXRender.ShaderRenderer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PyMaterialXRender.ShaderRenderer</span></code></a></dt><dd><ul>
+<li><dl class="simple">
+<dt><a class="reference internal" href="metal-rendering/PyMaterialXRenderMsl.MslRenderer.html#PyMaterialXRenderMsl.MslRenderer" title="PyMaterialXRenderMsl.MslRenderer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MslRenderer</span></code></a></dt><dd><ul>
+<li><p><a class="reference internal" href="metal-rendering/PyMaterialXRenderMsl.TextureBaker.html#PyMaterialXRenderMsl.TextureBaker" title="PyMaterialXRenderMsl.TextureBaker"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TextureBaker</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><a class="reference internal" href="images/PyMaterialXRender.ImageHandler.html#PyMaterialXRender.ImageHandler" title="PyMaterialXRender.ImageHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PyMaterialXRender.ImageHandler</span></code></a></dt><dd><ul>
+<li><p><a class="reference internal" href="metal-rendering/PyMaterialXRenderMsl.MetalTextureHandler.html#PyMaterialXRenderMsl.MetalTextureHandler" title="PyMaterialXRenderMsl.MetalTextureHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MetalTextureHandler</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p><strong>Class Index</strong></p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="metal-rendering/PyMaterialXRenderMsl.MslRenderer.html#PyMaterialXRenderMsl.MslRenderer" title="PyMaterialXRenderMsl.MslRenderer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MslRenderer</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="metal-rendering/PyMaterialXRenderMsl.MslProgram.html#PyMaterialXRenderMsl.MslProgram" title="PyMaterialXRenderMsl.MslProgram"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MslProgram</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="metal-rendering/PyMaterialXRenderMsl.MetalTextureHandler.html#PyMaterialXRenderMsl.MetalTextureHandler" title="PyMaterialXRenderMsl.MetalTextureHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MetalTextureHandler</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="metal-rendering/PyMaterialXRenderMsl.Input.html#PyMaterialXRenderMsl.Input" title="PyMaterialXRenderMsl.Input"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Input</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="metal-rendering/PyMaterialXRenderMsl.TextureBaker.html#PyMaterialXRenderMsl.TextureBaker" title="PyMaterialXRenderMsl.TextureBaker"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TextureBaker</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="alphabetical-index">
 <h2>Alphabetical Index<a class="headerlink" href="#alphabetical-index" title="Link to this heading">¶</a></h2>
 <p class="rubric">Classes</p>
@@ -127,6 +182,7 @@ look-development content across applications and renderers.
 <li class="toctree-l1"><a class="reference internal" href="PyMaterialXRenderGlsl.html">PyMaterialXRenderGlsl</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PyMaterialXRenderOsl.html">PyMaterialXRenderOsl</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">PyMaterialXRenderMsl</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#metal-rendering-classes">Metal Rendering Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#alphabetical-index">Alphabetical Index</a></li>
 </ul>
 </li>
