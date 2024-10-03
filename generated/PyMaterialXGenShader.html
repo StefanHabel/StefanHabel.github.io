@@ -14,8 +14,8 @@
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="PyMaterialXGenShader.ShaderGenerator" href="shader-generation/PyMaterialXGenShader.ShaderGenerator.html" />
-    <link rel="prev" title="PyMaterialXFormat.ExceptionFileMissing" href="xml-serialization/PyMaterialXFormat.ExceptionFileMissing.html" />
+    <link rel="next" title="PyMaterialXGenGlsl" href="PyMaterialXGenGlsl.html" />
+    <link rel="prev" title="PyMaterialXFormat" href="PyMaterialXFormat.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -35,200 +35,46 @@
             
   <section id="module-PyMaterialXGenShader">
 <span id="pymaterialxgenshader"></span><h1>PyMaterialXGenShader<a class="headerlink" href="#module-PyMaterialXGenShader" title="Link to this heading">¶</a></h1>
-<p>Core shader generation support.</p>
-<section id="shader-generation-classes">
-<h2>Shader Generation Classes<a class="headerlink" href="#shader-generation-classes" title="Link to this heading">¶</a></h2>
-<table class="autosummary longtable docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="shader-generation/PyMaterialXGenShader.ShaderGenerator.html#PyMaterialXGenShader.ShaderGenerator" title="PyMaterialXGenShader.ShaderGenerator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ShaderGenerator</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="shader-generation/PyMaterialXGenShader.HwShaderGenerator.html#PyMaterialXGenShader.HwShaderGenerator" title="PyMaterialXGenShader.HwShaderGenerator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HwShaderGenerator</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="shader-generation/PyMaterialXGenShader.HwResourceBindingContext.html#PyMaterialXGenShader.HwResourceBindingContext" title="PyMaterialXGenShader.HwResourceBindingContext"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HwResourceBindingContext</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="shader-generation/PyMaterialXGenShader.GenContext.html#PyMaterialXGenShader.GenContext" title="PyMaterialXGenShader.GenContext"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GenContext</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="shader-generation/PyMaterialXGenShader.GenOptions.html#PyMaterialXGenShader.GenOptions" title="PyMaterialXGenShader.GenOptions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GenOptions</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="shader-generation/PyMaterialXGenShader.GenUserData.html#PyMaterialXGenShader.GenUserData" title="PyMaterialXGenShader.GenUserData"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GenUserData</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="shader-generation/PyMaterialXGenShader.ApplicationVariableHandler.html#PyMaterialXGenShader.ApplicationVariableHandler" title="PyMaterialXGenShader.ApplicationVariableHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ApplicationVariableHandler</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="shader-generation/PyMaterialXGenShader.Shader.html#PyMaterialXGenShader.Shader" title="PyMaterialXGenShader.Shader"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Shader</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="shader-generation/PyMaterialXGenShader.ShaderPort.html#PyMaterialXGenShader.ShaderPort" title="PyMaterialXGenShader.ShaderPort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ShaderPort</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="shader-generation/PyMaterialXGenShader.ShaderPortPredicate.html#PyMaterialXGenShader.ShaderPortPredicate" title="PyMaterialXGenShader.ShaderPortPredicate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ShaderPortPredicate</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="shader-generation/PyMaterialXGenShader.ShaderStage.html#PyMaterialXGenShader.ShaderStage" title="PyMaterialXGenShader.ShaderStage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ShaderStage</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="shader-generation/PyMaterialXGenShader.ShaderTranslator.html#PyMaterialXGenShader.ShaderTranslator" title="PyMaterialXGenShader.ShaderTranslator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ShaderTranslator</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="shader-generation/PyMaterialXGenShader.TypeDesc.html#PyMaterialXGenShader.TypeDesc" title="PyMaterialXGenShader.TypeDesc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeDesc</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="shader-generation/PyMaterialXGenShader.VariableBlock.html#PyMaterialXGenShader.VariableBlock" title="PyMaterialXGenShader.VariableBlock"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VariableBlock</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="enumeration-classes">
-<h2>Enumeration Classes<a class="headerlink" href="#enumeration-classes" title="Link to this heading">¶</a></h2>
-<table class="autosummary longtable docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="enumeration/PyMaterialXGenShader.ShaderInterfaceType.html#PyMaterialXGenShader.ShaderInterfaceType" title="PyMaterialXGenShader.ShaderInterfaceType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ShaderInterfaceType</span></code></a></p></td>
-<td><p>Members:</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="enumeration/PyMaterialXGenShader.HwSpecularEnvironmentMethod.html#PyMaterialXGenShader.HwSpecularEnvironmentMethod" title="PyMaterialXGenShader.HwSpecularEnvironmentMethod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HwSpecularEnvironmentMethod</span></code></a></p></td>
-<td><p>Members:</p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="color-management-classes">
-<h2>Color Management Classes<a class="headerlink" href="#color-management-classes" title="Link to this heading">¶</a></h2>
-<table class="autosummary longtable docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="color-management/PyMaterialXGenShader.ColorManagementSystem.html#PyMaterialXGenShader.ColorManagementSystem" title="PyMaterialXGenShader.ColorManagementSystem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ColorManagementSystem</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="color-management/PyMaterialXGenShader.DefaultColorManagementSystem.html#PyMaterialXGenShader.DefaultColorManagementSystem" title="PyMaterialXGenShader.DefaultColorManagementSystem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DefaultColorManagementSystem</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="color-management/PyMaterialXGenShader.ColorSpaceTransform.html#PyMaterialXGenShader.ColorSpaceTransform" title="PyMaterialXGenShader.ColorSpaceTransform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ColorSpaceTransform</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="unit-system-classes">
-<h2>Unit System Classes<a class="headerlink" href="#unit-system-classes" title="Link to this heading">¶</a></h2>
-<table class="autosummary longtable docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="unit-system/PyMaterialXGenShader.UnitSystem.html#PyMaterialXGenShader.UnitSystem" title="PyMaterialXGenShader.UnitSystem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnitSystem</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="unit-system/PyMaterialXGenShader.UnitTransform.html#PyMaterialXGenShader.UnitTransform" title="PyMaterialXGenShader.UnitTransform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnitTransform</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="utility-functions">
-<h2>Utility Functions<a class="headerlink" href="#utility-functions" title="Link to this heading">¶</a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="PyMaterialXGenShader.connectsToWorldSpaceNode">
-<span class="sig-name descname"><span class="pre">connectsToWorldSpaceNode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="elements/PyMaterialXCore.Output.html#PyMaterialXCore.Output" title="PyMaterialXCore.Output"><span class="pre">Output</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="elements/PyMaterialXCore.Node.html#PyMaterialXCore.Node" title="PyMaterialXCore.Node"><span class="pre">Node</span></a></span></span><a class="headerlink" href="#PyMaterialXGenShader.connectsToWorldSpaceNode" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="PyMaterialXGenShader.elementRequiresShading">
-<span class="sig-name descname"><span class="pre">elementRequiresShading</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="elements/PyMaterialXCore.TypedElement.html#PyMaterialXCore.TypedElement" title="PyMaterialXCore.TypedElement"><span class="pre">TypedElement</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#PyMaterialXGenShader.elementRequiresShading" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="PyMaterialXGenShader.findRenderableElements">
-<span class="sig-name descname"><span class="pre">findRenderableElements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">doc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="elements/PyMaterialXCore.Document.html#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">includeReferencedGraphs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="elements/PyMaterialXCore.TypedElement.html#PyMaterialXCore.TypedElement" title="PyMaterialXCore.TypedElement"><span class="pre">TypedElement</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXGenShader.findRenderableElements" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="PyMaterialXGenShader.findRenderableMaterialNodes">
-<span class="sig-name descname"><span class="pre">findRenderableMaterialNodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="elements/PyMaterialXCore.Document.html#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="elements/PyMaterialXCore.TypedElement.html#PyMaterialXCore.TypedElement" title="PyMaterialXCore.TypedElement"><span class="pre">TypedElement</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXGenShader.findRenderableMaterialNodes" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="PyMaterialXGenShader.getNodeDefInput">
-<span class="sig-name descname"><span class="pre">getNodeDefInput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="elements/PyMaterialXCore.Input.html#PyMaterialXCore.Input" title="PyMaterialXCore.Input"><span class="pre">Input</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="elements/PyMaterialXCore.Input.html#PyMaterialXCore.Input" title="PyMaterialXCore.Input"><span class="pre">Input</span></a></span></span><a class="headerlink" href="#PyMaterialXGenShader.getNodeDefInput" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="PyMaterialXGenShader.getUdimCoordinates">
-<span class="sig-name descname"><span class="pre">getUdimCoordinates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="value-classes/PyMaterialXCore.Vector2.html#PyMaterialXCore.Vector2" title="PyMaterialXCore.Vector2"><span class="pre">Vector2</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXGenShader.getUdimCoordinates" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="PyMaterialXGenShader.getUdimScaleAndOffset">
-<span class="sig-name descname"><span class="pre">getUdimScaleAndOffset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="value-classes/PyMaterialXCore.Vector2.html#PyMaterialXCore.Vector2" title="PyMaterialXCore.Vector2"><span class="pre">Vector2</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="value-classes/PyMaterialXCore.Vector2.html#PyMaterialXCore.Vector2" title="PyMaterialXCore.Vector2"><span class="pre">Vector2</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="value-classes/PyMaterialXCore.Vector2.html#PyMaterialXCore.Vector2" title="PyMaterialXCore.Vector2"><span class="pre">Vector2</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXGenShader.getUdimScaleAndOffset" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="PyMaterialXGenShader.hasElementAttributes">
-<span class="sig-name descname"><span class="pre">hasElementAttributes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="elements/PyMaterialXCore.Output.html#PyMaterialXCore.Output" title="PyMaterialXCore.Output"><span class="pre">Output</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#PyMaterialXGenShader.hasElementAttributes" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="PyMaterialXGenShader.isTransparentSurface">
-<span class="sig-name descname"><span class="pre">isTransparentSurface</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="elements/PyMaterialXCore.Element.html#PyMaterialXCore.Element" title="PyMaterialXCore.Element"><span class="pre">Element</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#PyMaterialXGenShader.isTransparentSurface" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="PyMaterialXGenShader.mapValueToColor">
-<span class="sig-name descname"><span class="pre">mapValueToColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="value-classes/PyMaterialXCore.Value.html#PyMaterialXCore.Value" title="PyMaterialXCore.Value"><span class="pre">Value</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="value-classes/PyMaterialXCore.Color4.html#PyMaterialXCore.Color4" title="PyMaterialXCore.Color4"><span class="pre">Color4</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXGenShader.mapValueToColor" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="PyMaterialXGenShader.requiresImplementation">
-<span class="sig-name descname"><span class="pre">requiresImplementation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="elements/PyMaterialXCore.NodeDef.html#PyMaterialXCore.NodeDef" title="PyMaterialXCore.NodeDef"><span class="pre">NodeDef</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#PyMaterialXGenShader.requiresImplementation" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="PyMaterialXGenShader.tokenSubstitution">
-<span class="sig-name descname"><span class="pre">tokenSubstitution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXGenShader.tokenSubstitution" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</section>
+<p>Core shader generation support for MaterialX.</p>
 <section id="alphabetical-index">
 <h2>Alphabetical Index<a class="headerlink" href="#alphabetical-index" title="Link to this heading">¶</a></h2>
 <p class="rubric">Functions</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXGenShader.connectsToWorldSpaceNode" title="PyMaterialXGenShader.connectsToWorldSpaceNode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connectsToWorldSpaceNode</span></code></a>(arg0)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">connectsToWorldSpaceNode</span></code>(arg0)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXGenShader.elementRequiresShading" title="PyMaterialXGenShader.elementRequiresShading"><code class="xref py py-obj docutils literal notranslate"><span class="pre">elementRequiresShading</span></code></a>(arg0)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">elementRequiresShading</span></code>(arg0)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXGenShader.findRenderableElements" title="PyMaterialXGenShader.findRenderableElements"><code class="xref py py-obj docutils literal notranslate"><span class="pre">findRenderableElements</span></code></a>(doc[, ...])</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">findRenderableElements</span></code>(doc[, ...])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXGenShader.findRenderableMaterialNodes" title="PyMaterialXGenShader.findRenderableMaterialNodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">findRenderableMaterialNodes</span></code></a>(arg0)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">findRenderableMaterialNodes</span></code>(arg0)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXGenShader.getNodeDefInput" title="PyMaterialXGenShader.getNodeDefInput"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNodeDefInput</span></code></a>(arg0, arg1)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">getNodeDefInput</span></code>(arg0, arg1)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXGenShader.getUdimCoordinates" title="PyMaterialXGenShader.getUdimCoordinates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getUdimCoordinates</span></code></a>(arg0)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">getUdimCoordinates</span></code>(arg0)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXGenShader.getUdimScaleAndOffset" title="PyMaterialXGenShader.getUdimScaleAndOffset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getUdimScaleAndOffset</span></code></a>(arg0, arg1, arg2)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">getUdimScaleAndOffset</span></code>(arg0, arg1, arg2)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXGenShader.hasElementAttributes" title="PyMaterialXGenShader.hasElementAttributes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasElementAttributes</span></code></a>(arg0, arg1)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasElementAttributes</span></code>(arg0, arg1)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXGenShader.isTransparentSurface" title="PyMaterialXGenShader.isTransparentSurface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isTransparentSurface</span></code></a>(arg0, arg1)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">isTransparentSurface</span></code>(arg0, arg1)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXGenShader.mapValueToColor" title="PyMaterialXGenShader.mapValueToColor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mapValueToColor</span></code></a>(arg0, arg1)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">mapValueToColor</span></code>(arg0, arg1)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXGenShader.requiresImplementation" title="PyMaterialXGenShader.requiresImplementation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">requiresImplementation</span></code></a>(arg0)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">requiresImplementation</span></code>(arg0)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXGenShader.tokenSubstitution" title="PyMaterialXGenShader.tokenSubstitution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tokenSubstitution</span></code></a>(arg0, arg1)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tokenSubstitution</span></code>(arg0, arg1)</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -363,11 +209,6 @@ look-development content across applications and renderers.
 <li class="toctree-l1"><a class="reference internal" href="PyMaterialXCore.html">PyMaterialXCore</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PyMaterialXFormat.html">PyMaterialXFormat</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">PyMaterialXGenShader</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#shader-generation-classes">Shader Generation Classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#enumeration-classes">Enumeration Classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#color-management-classes">Color Management Classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#unit-system-classes">Unit System Classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#utility-functions">Utility Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#alphabetical-index">Alphabetical Index</a></li>
 </ul>
 </li>
