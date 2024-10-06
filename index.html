@@ -71,7 +71,7 @@ provide a more pythonic interface, in particular for working with the
 <p>All functions and classes from the <a class="reference internal" href="generated/PyMaterialXCore.html#module-PyMaterialXCore" title="PyMaterialXCore"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PyMaterialXCore</span></code></a> and <a class="reference internal" href="generated/PyMaterialXFormat.html#module-PyMaterialXFormat" title="PyMaterialXFormat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PyMaterialXFormat</span></code></a>
 modules are available in the top-level <code class="xref py py-obj docutils literal notranslate"><span class="pre">MaterialX</span></code> namespace, and, by aliasing,
 the <code class="xref py py-obj docutils literal notranslate"><span class="pre">mx</span></code> namespace.</p>
-<p>For example, the <a class="reference internal" href="generated/value-classes/PyMaterialXCore.Matrix44.html#PyMaterialXCore.Matrix44" title="PyMaterialXCore.Matrix44"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PyMaterialXCore.Matrix44</span></code></a> class is typically used as
+<p>For example, the <a class="reference internal" href="generated/PyMaterialXCore.Matrix44.html#PyMaterialXCore.Matrix44" title="PyMaterialXCore.Matrix44"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PyMaterialXCore.Matrix44</span></code></a> class is typically used as
 <code class="xref py py-obj docutils literal notranslate"><span class="pre">mx.Matrix44</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">MaterialX</span> <span class="k">as</span> <span class="nn">mx</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mx</span><span class="o">.</span><span class="n">Matrix44</span>
@@ -91,7 +91,7 @@ or <a class="reference external" href="search.html?q=MeshPartition">MeshPartitio
 <td><p>Core MaterialX elements and graph traversal.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/PyMaterialXFormat.html#module-PyMaterialXFormat" title="PyMaterialXFormat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PyMaterialXFormat</span></code></a></p></td>
-<td><p>Cross-platform support for file and search paths, and XML serialization.</p></td>
+<td><p>Cross-platform support for document serialization and file utilities.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/PyMaterialXGenShader.html#module-PyMaterialXGenShader" title="PyMaterialXGenShader"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PyMaterialXGenShader</span></code></a></p></td>
 <td><p>Core shader generation support for MaterialX.</p></td>
@@ -100,7 +100,7 @@ or <a class="reference external" href="search.html?q=MeshPartition">MeshPartitio
 <td><p>Shader generation using the OpenGL Shading Language.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/PyMaterialXGenOsl.html#module-PyMaterialXGenOsl" title="PyMaterialXGenOsl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PyMaterialXGenOsl</span></code></a></p></td>
-<td><p>Shader generation using the Open Shading Language.</p></td>
+<td><p>Shader generation using Open Shading Language.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/PyMaterialXGenMdl.html#module-PyMaterialXGenMdl" title="PyMaterialXGenMdl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PyMaterialXGenMdl</span></code></a></p></td>
 <td><p>Shader generation using the Material Definition Language.</p></td>
@@ -112,13 +112,13 @@ or <a class="reference external" href="search.html?q=MeshPartition">MeshPartitio
 <td><p>Core rendering support for MaterialX.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/PyMaterialXRenderGlsl.html#module-PyMaterialXRenderGlsl" title="PyMaterialXRenderGlsl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PyMaterialXRenderGlsl</span></code></a></p></td>
-<td><p>Rendering materials using the OpenGL Shading Language.</p></td>
+<td><p>Rendering support for the OpenGL Shading Language.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/PyMaterialXRenderOsl.html#module-PyMaterialXRenderOsl" title="PyMaterialXRenderOsl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PyMaterialXRenderOsl</span></code></a></p></td>
-<td><p>Rendering materials using the Open Shading Language.</p></td>
+<td><p>Rendering support for Open Shading Language.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/PyMaterialXRenderMsl.html#module-PyMaterialXRenderMsl" title="PyMaterialXRenderMsl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PyMaterialXRenderMsl</span></code></a></p></td>
-<td><p>Rendering materials using the Metal Shading Language.</p></td>
+<td><p>Rendering support for the Metal Shading Language.</p></td>
 </tr>
 </tbody>
 </table>

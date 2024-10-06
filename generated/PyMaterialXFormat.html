@@ -14,8 +14,8 @@
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="PyMaterialXGenShader" href="PyMaterialXGenShader.html" />
-    <link rel="prev" title="PyMaterialXCore" href="PyMaterialXCore.html" />
+    <link rel="next" title="PyMaterialXFormat.FilePath" href="PyMaterialXFormat.FilePath.html" />
+    <link rel="prev" title="PyMaterialXCore.ExceptionOrphanedElement" href="PyMaterialXCore.ExceptionOrphanedElement.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -35,93 +35,164 @@
             
   <section id="module-PyMaterialXFormat">
 <span id="pymaterialxformat"></span><h1>PyMaterialXFormat<a class="headerlink" href="#module-PyMaterialXFormat" title="Link to this heading">¶</a></h1>
-<p>Cross-platform support for file and search paths, and XML serialization.</p>
-<section id="alphabetical-index">
-<h2>Alphabetical Index<a class="headerlink" href="#alphabetical-index" title="Link to this heading">¶</a></h2>
-<p class="rubric">Functions</p>
+<p>Cross-platform support for document serialization and file utilities.</p>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">¶</a></h2>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">flattenFilenames</span></code>(doc, searchPath, customResolver)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXFormat.FilePath.html#PyMaterialXFormat.FilePath" title="PyMaterialXFormat.FilePath"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FilePath</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">getEnvironmentPath</span></code>([sep])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXFormat.FileSearchPath.html#PyMaterialXFormat.FileSearchPath" title="PyMaterialXFormat.FileSearchPath"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FileSearchPath</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSourceSearchPath</span></code>(arg0)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSubdirectories</span></code>(arg0, arg1, arg2)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">loadDocuments</span></code>(rootPath, searchPath, ...[, ...])</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">loadLibraries</span></code>(libraryFolders, searchPath, doc)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">loadLibrary</span></code>(file, doc, searchPath, readOptions)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">prependXInclude</span></code>(arg0, arg1)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">readFile</span></code>(arg0)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">readFromXmlFileBase</span></code>(doc, filename, ...)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">readFromXmlString</span></code>(doc, str, searchPath, ...)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">writeToXmlFile</span></code>(doc, filename[, writeOptions])</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">writeToXmlString</span></code>(doc[, writeOptions])</p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Classes</p>
-<table class="autosummary longtable docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="file-and-search-paths/PyMaterialXFormat.FilePath.html#PyMaterialXFormat.FilePath" title="PyMaterialXFormat.FilePath"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FilePath</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="file-and-search-paths/PyMaterialXFormat.FileSearchPath.html#PyMaterialXFormat.FileSearchPath" title="PyMaterialXFormat.FileSearchPath"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FileSearchPath</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="file-and-search-paths/PyMaterialXFormat.Format.html#PyMaterialXFormat.Format" title="PyMaterialXFormat.Format"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Format</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXFormat.Format.html#PyMaterialXFormat.Format" title="PyMaterialXFormat.Format"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Format</span></code></a></p></td>
 <td><p>Members:</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="file-and-search-paths/PyMaterialXFormat.Type.html#PyMaterialXFormat.Type" title="PyMaterialXFormat.Type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Type</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXFormat.Type.html#PyMaterialXFormat.Type" title="PyMaterialXFormat.Type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Type</span></code></a></p></td>
 <td><p>Members:</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="xml-serialization/PyMaterialXFormat.XmlReadOptions.html#PyMaterialXFormat.XmlReadOptions" title="PyMaterialXFormat.XmlReadOptions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XmlReadOptions</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXFormat.XmlReadOptions.html#PyMaterialXFormat.XmlReadOptions" title="PyMaterialXFormat.XmlReadOptions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XmlReadOptions</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="xml-serialization/PyMaterialXFormat.XmlWriteOptions.html#PyMaterialXFormat.XmlWriteOptions" title="PyMaterialXFormat.XmlWriteOptions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XmlWriteOptions</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Exceptions</p>
-<table class="autosummary longtable docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="xml-serialization/PyMaterialXFormat.ExceptionFileMissing.html#PyMaterialXFormat.ExceptionFileMissing" title="PyMaterialXFormat.ExceptionFileMissing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ExceptionFileMissing</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="xml-serialization/PyMaterialXFormat.ExceptionParseError.html#PyMaterialXFormat.ExceptionParseError" title="PyMaterialXFormat.ExceptionParseError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ExceptionParseError</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXFormat.XmlWriteOptions.html#PyMaterialXFormat.XmlWriteOptions" title="PyMaterialXFormat.XmlWriteOptions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XmlWriteOptions</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
 </section>
+<section id="exception-types">
+<h2>Exception Types<a class="headerlink" href="#exception-types" title="Link to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXFormat.ExceptionFileMissing.html#PyMaterialXFormat.ExceptionFileMissing" title="PyMaterialXFormat.ExceptionFileMissing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ExceptionFileMissing</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXFormat.ExceptionParseError.html#PyMaterialXFormat.ExceptionParseError" title="PyMaterialXFormat.ExceptionParseError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ExceptionParseError</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="module-functions">
+<h2>Module Functions<a class="headerlink" href="#module-functions" title="Link to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXFormat.flattenFilenames" title="PyMaterialXFormat.flattenFilenames"><code class="xref py py-obj docutils literal notranslate"><span class="pre">flattenFilenames</span></code></a>(doc, searchPath, customResolver)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXFormat.getEnvironmentPath" title="PyMaterialXFormat.getEnvironmentPath"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getEnvironmentPath</span></code></a>([sep])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXFormat.getSourceSearchPath" title="PyMaterialXFormat.getSourceSearchPath"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSourceSearchPath</span></code></a>(arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXFormat.getSubdirectories" title="PyMaterialXFormat.getSubdirectories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSubdirectories</span></code></a>(arg0, arg1, arg2)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXFormat.loadDocuments" title="PyMaterialXFormat.loadDocuments"><code class="xref py py-obj docutils literal notranslate"><span class="pre">loadDocuments</span></code></a>(rootPath, searchPath, ...[, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXFormat.loadLibraries" title="PyMaterialXFormat.loadLibraries"><code class="xref py py-obj docutils literal notranslate"><span class="pre">loadLibraries</span></code></a>(libraryFolders, searchPath, doc)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXFormat.loadLibrary" title="PyMaterialXFormat.loadLibrary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">loadLibrary</span></code></a>(file, doc, searchPath, readOptions)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXFormat.prependXInclude" title="PyMaterialXFormat.prependXInclude"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prependXInclude</span></code></a>(arg0, arg1)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXFormat.readFile" title="PyMaterialXFormat.readFile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">readFile</span></code></a>(arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXFormat.readFromXmlFileBase" title="PyMaterialXFormat.readFromXmlFileBase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">readFromXmlFileBase</span></code></a>(doc, filename, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXFormat.readFromXmlString" title="PyMaterialXFormat.readFromXmlString"><code class="xref py py-obj docutils literal notranslate"><span class="pre">readFromXmlString</span></code></a>(doc, str, searchPath, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXFormat.writeToXmlFile" title="PyMaterialXFormat.writeToXmlFile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">writeToXmlFile</span></code></a>(doc, filename[, writeOptions])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXFormat.writeToXmlString" title="PyMaterialXFormat.writeToXmlString"><code class="xref py py-obj docutils literal notranslate"><span class="pre">writeToXmlString</span></code></a>(doc[, writeOptions])</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<section id="pymaterialxformat-module-function-documentation">
+<h3>PyMaterialXFormat Module Function Documentation<a class="headerlink" href="#pymaterialxformat-module-function-documentation" title="Link to this heading">¶</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXFormat.flattenFilenames">
+<span class="sig-name descname"><span class="pre">flattenFilenames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">doc:</span> <span class="pre">Document</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">searchPath:</span> <span class="pre">FileSearchPath</span> <span class="pre">=</span> <span class="pre">&lt;FileSearchPath</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x110d3e330&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">customResolver:</span> <span class="pre">StringResolver</span> <span class="pre">=</span> <span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXFormat.flattenFilenames" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXFormat.getEnvironmentPath">
+<span class="sig-name descname"><span class="pre">getEnvironmentPath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">':'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXFormat.FileSearchPath.html#PyMaterialXFormat.FileSearchPath" title="PyMaterialXFormat.FileSearchPath"><span class="pre">FileSearchPath</span></a></span></span><a class="headerlink" href="#PyMaterialXFormat.getEnvironmentPath" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXFormat.getSourceSearchPath">
+<span class="sig-name descname"><span class="pre">getSourceSearchPath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="PyMaterialXCore.Document.html#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXFormat.FileSearchPath.html#PyMaterialXFormat.FileSearchPath" title="PyMaterialXFormat.FileSearchPath"><span class="pre">FileSearchPath</span></a></span></span><a class="headerlink" href="#PyMaterialXFormat.getSourceSearchPath" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXFormat.getSubdirectories">
+<span class="sig-name descname"><span class="pre">getSubdirectories</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="PyMaterialXFormat.FilePath.html#PyMaterialXFormat.FilePath" title="PyMaterialXFormat.FilePath"><span class="pre">FilePath</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="PyMaterialXFormat.FileSearchPath.html#PyMaterialXFormat.FileSearchPath" title="PyMaterialXFormat.FileSearchPath"><span class="pre">FileSearchPath</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="PyMaterialXFormat.FilePath.html#PyMaterialXFormat.FilePath" title="PyMaterialXFormat.FilePath"><span class="pre">FilePath</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXFormat.getSubdirectories" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXFormat.loadDocuments">
+<span class="sig-name descname"><span class="pre">loadDocuments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rootPath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="PyMaterialXFormat.FilePath.html#PyMaterialXFormat.FilePath" title="PyMaterialXFormat.FilePath"><span class="pre">FilePath</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">searchPath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="PyMaterialXFormat.FileSearchPath.html#PyMaterialXFormat.FileSearchPath" title="PyMaterialXFormat.FileSearchPath"><span class="pre">FileSearchPath</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">skipFiles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">includeFiles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">documents</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="PyMaterialXCore.Document.html#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">documentsPaths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">readOptions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="PyMaterialXFormat.XmlReadOptions.html#PyMaterialXFormat.XmlReadOptions" title="PyMaterialXFormat.XmlReadOptions"><span class="pre">XmlReadOptions</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXFormat.loadDocuments" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXFormat.loadLibraries">
+<span class="sig-name descname"><span class="pre">loadLibraries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">libraryFolders</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="PyMaterialXFormat.FilePath.html#PyMaterialXFormat.FilePath" title="PyMaterialXFormat.FilePath"><span class="pre">FilePath</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">searchPath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="PyMaterialXFormat.FileSearchPath.html#PyMaterialXFormat.FileSearchPath" title="PyMaterialXFormat.FileSearchPath"><span class="pre">FileSearchPath</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">doc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="PyMaterialXCore.Document.html#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">excludeFiles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">set()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">readOptions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="PyMaterialXFormat.XmlReadOptions.html#PyMaterialXFormat.XmlReadOptions" title="PyMaterialXFormat.XmlReadOptions"><span class="pre">XmlReadOptions</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXFormat.loadLibraries" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXFormat.loadLibrary">
+<span class="sig-name descname"><span class="pre">loadLibrary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file:</span> <span class="pre">FilePath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doc:</span> <span class="pre">Document</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">searchPath:</span> <span class="pre">FileSearchPath</span> <span class="pre">=</span> <span class="pre">&lt;FileSearchPath</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x110d3dff0&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">readOptions:</span> <span class="pre">XmlReadOptions</span> <span class="pre">=</span> <span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXFormat.loadLibrary" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXFormat.prependXInclude">
+<span class="sig-name descname"><span class="pre">prependXInclude</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="PyMaterialXCore.Document.html#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="PyMaterialXFormat.FilePath.html#PyMaterialXFormat.FilePath" title="PyMaterialXFormat.FilePath"><span class="pre">FilePath</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXFormat.prependXInclude" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXFormat.readFile">
+<span class="sig-name descname"><span class="pre">readFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="PyMaterialXFormat.FilePath.html#PyMaterialXFormat.FilePath" title="PyMaterialXFormat.FilePath"><span class="pre">FilePath</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#PyMaterialXFormat.readFile" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXFormat.readFromXmlFileBase">
+<span class="sig-name descname"><span class="pre">readFromXmlFileBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">doc:</span> <span class="pre">Document</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename:</span> <span class="pre">FilePath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">searchPath:</span> <span class="pre">FileSearchPath</span> <span class="pre">=</span> <span class="pre">&lt;FileSearchPath</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x110d3e8b0&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">readOptions:</span> <span class="pre">XmlReadOptions</span> <span class="pre">=</span> <span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXFormat.readFromXmlFileBase" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXFormat.readFromXmlString">
+<span class="sig-name descname"><span class="pre">readFromXmlString</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">doc:</span> <span class="pre">Document</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">searchPath:</span> <span class="pre">FileSearchPath</span> <span class="pre">=</span> <span class="pre">&lt;FileSearchPath</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x110d3f0f0&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">readOptions:</span> <span class="pre">XmlReadOptions</span> <span class="pre">=</span> <span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXFormat.readFromXmlString" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXFormat.writeToXmlFile">
+<span class="sig-name descname"><span class="pre">writeToXmlFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">doc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="PyMaterialXCore.Document.html#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="PyMaterialXFormat.FilePath.html#PyMaterialXFormat.FilePath" title="PyMaterialXFormat.FilePath"><span class="pre">FilePath</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">writeOptions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="PyMaterialXFormat.XmlWriteOptions.html#PyMaterialXFormat.XmlWriteOptions" title="PyMaterialXFormat.XmlWriteOptions"><span class="pre">XmlWriteOptions</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#PyMaterialXFormat.writeToXmlFile" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXFormat.writeToXmlString">
+<span class="sig-name descname"><span class="pre">writeToXmlString</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">doc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="PyMaterialXCore.Document.html#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">writeOptions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="PyMaterialXFormat.XmlWriteOptions.html#PyMaterialXFormat.XmlWriteOptions" title="PyMaterialXFormat.XmlWriteOptions"><span class="pre">XmlWriteOptions</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#PyMaterialXFormat.writeToXmlString" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <p>Module source:
 <a class="reference external" href="https://github.com/AcademySoftwareFoundation/MaterialX/tree/main">MaterialX</a> /
 <a class="reference external" href="https://github.com/AcademySoftwareFoundation/MaterialX/tree/main/source">source</a> /
 <a class="reference external" href="https://github.com/AcademySoftwareFoundation/MaterialX/tree/main/source/PyMaterialX">PyMaterialX</a> /
 <a class="reference external" href="https://github.com/AcademySoftwareFoundation/MaterialX/tree/main/source/PyMaterialX/PyMaterialXFormat">PyMaterialXFormat</a> /</p>
+</section>
+</section>
 </section>
 
 
@@ -177,7 +248,9 @@ look-development content across applications and renderers.
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="PyMaterialXCore.html">PyMaterialXCore</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">PyMaterialXFormat</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#alphabetical-index">Alphabetical Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exception-types">Exception Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-functions">Module Functions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="PyMaterialXGenShader.html">PyMaterialXGenShader</a></li>

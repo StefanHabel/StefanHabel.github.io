@@ -14,7 +14,7 @@
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="PyMaterialXFormat" href="PyMaterialXFormat.html" />
+    <link rel="next" title="PyMaterialXCore.AttributeDef" href="PyMaterialXCore.AttributeDef.html" />
     <link rel="prev" title="Shader Generation" href="../ShaderGeneration.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -36,326 +36,432 @@
   <section id="module-PyMaterialXCore">
 <span id="pymaterialxcore"></span><h1>PyMaterialXCore<a class="headerlink" href="#module-PyMaterialXCore" title="Link to this heading">¶</a></h1>
 <p>Core MaterialX elements and graph traversal.</p>
-<section id="alphabetical-index">
-<h2>Alphabetical Index<a class="headerlink" href="#alphabetical-index" title="Link to this heading">¶</a></h2>
-<p class="rubric">Functions</p>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">¶</a></h2>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">createDocument</span></code>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.AttributeDef.html#PyMaterialXCore.AttributeDef" title="PyMaterialXCore.AttributeDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AttributeDef</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">createNamePath</span></code>(arg0)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.Backdrop.html#PyMaterialXCore.Backdrop" title="PyMaterialXCore.Backdrop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Backdrop</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">createValidName</span></code>(name[, replaceChar])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.Collection.html#PyMaterialXCore.Collection" title="PyMaterialXCore.Collection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Collection</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">geomStringsMatch</span></code>(arg0, arg1, arg2)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.Color3.html#PyMaterialXCore.Color3" title="PyMaterialXCore.Color3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Color3</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">getConnectedOutputs</span></code>(arg0)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.Color4.html#PyMaterialXCore.Color4" title="PyMaterialXCore.Color4"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Color4</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">getGeometryBindings</span></code>(materialNode[, geom])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.CommentElement.html#PyMaterialXCore.CommentElement" title="PyMaterialXCore.CommentElement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CommentElement</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShaderNodes</span></code>(materialNode[, nodeType, target])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.Document.html#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Document</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVersionIntegers</span></code>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.Edge.html#PyMaterialXCore.Edge" title="PyMaterialXCore.Edge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Edge</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVersionString</span></code>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.Element.html#PyMaterialXCore.Element" title="PyMaterialXCore.Element"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Element</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">incrementName</span></code>(arg0)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.ElementPredicate.html#PyMaterialXCore.ElementPredicate" title="PyMaterialXCore.ElementPredicate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ElementPredicate</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">isValidName</span></code>(arg0)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.GenericElement.html#PyMaterialXCore.GenericElement" title="PyMaterialXCore.GenericElement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GenericElement</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">joinStrings</span></code>(arg0, arg1)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.GeomElement.html#PyMaterialXCore.GeomElement" title="PyMaterialXCore.GeomElement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeomElement</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">parentNamePath</span></code>(arg0)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.GeomInfo.html#PyMaterialXCore.GeomInfo" title="PyMaterialXCore.GeomInfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeomInfo</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">prettyPrint</span></code>(arg0)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.GeomProp.html#PyMaterialXCore.GeomProp" title="PyMaterialXCore.GeomProp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeomProp</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">replaceSubstrings</span></code>(arg0, arg1)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.GeomPropDef.html#PyMaterialXCore.GeomPropDef" title="PyMaterialXCore.GeomPropDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeomPropDef</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">splitNamePath</span></code>(arg0)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.GraphElement.html#PyMaterialXCore.GraphElement" title="PyMaterialXCore.GraphElement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GraphElement</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">splitString</span></code>(arg0, arg1)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.GraphIterator.html#PyMaterialXCore.GraphIterator" title="PyMaterialXCore.GraphIterator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GraphIterator</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">stringEndsWith</span></code>(arg0, arg1)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.Implementation.html#PyMaterialXCore.Implementation" title="PyMaterialXCore.Implementation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Implementation</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">stringStartsWith</span></code>(arg0, arg1)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.InheritanceIterator.html#PyMaterialXCore.InheritanceIterator" title="PyMaterialXCore.InheritanceIterator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InheritanceIterator</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">targetStringsMatch</span></code>(arg0, arg1)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.Input.html#PyMaterialXCore.Input" title="PyMaterialXCore.Input"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Input</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-</tbody>
-</table>
-<p class="rubric">Classes</p>
-<table class="autosummary longtable docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="elements/PyMaterialXCore.AttributeDef.html#PyMaterialXCore.AttributeDef" title="PyMaterialXCore.AttributeDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AttributeDef</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.InterfaceElement.html#PyMaterialXCore.InterfaceElement" title="PyMaterialXCore.InterfaceElement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InterfaceElement</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="elements/PyMaterialXCore.Backdrop.html#PyMaterialXCore.Backdrop" title="PyMaterialXCore.Backdrop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Backdrop</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.LinearUnitConverter.html#PyMaterialXCore.LinearUnitConverter" title="PyMaterialXCore.LinearUnitConverter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LinearUnitConverter</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="elements/PyMaterialXCore.Collection.html#PyMaterialXCore.Collection" title="PyMaterialXCore.Collection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Collection</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.Look.html#PyMaterialXCore.Look" title="PyMaterialXCore.Look"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Look</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="value-classes/PyMaterialXCore.Color3.html#PyMaterialXCore.Color3" title="PyMaterialXCore.Color3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Color3</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.LookGroup.html#PyMaterialXCore.LookGroup" title="PyMaterialXCore.LookGroup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LookGroup</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="value-classes/PyMaterialXCore.Color4.html#PyMaterialXCore.Color4" title="PyMaterialXCore.Color4"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Color4</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.MaterialAssign.html#PyMaterialXCore.MaterialAssign" title="PyMaterialXCore.MaterialAssign"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MaterialAssign</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="elements/PyMaterialXCore.CommentElement.html#PyMaterialXCore.CommentElement" title="PyMaterialXCore.CommentElement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CommentElement</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.Matrix33.html#PyMaterialXCore.Matrix33" title="PyMaterialXCore.Matrix33"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Matrix33</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="elements/PyMaterialXCore.Document.html#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Document</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.Matrix44.html#PyMaterialXCore.Matrix44" title="PyMaterialXCore.Matrix44"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Matrix44</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="elements/PyMaterialXCore.Edge.html#PyMaterialXCore.Edge" title="PyMaterialXCore.Edge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Edge</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.MatrixBase.html#PyMaterialXCore.MatrixBase" title="PyMaterialXCore.MatrixBase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MatrixBase</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="elements/PyMaterialXCore.Element.html#PyMaterialXCore.Element" title="PyMaterialXCore.Element"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Element</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.Member.html#PyMaterialXCore.Member" title="PyMaterialXCore.Member"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Member</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="predicates/PyMaterialXCore.ElementPredicate.html#PyMaterialXCore.ElementPredicate" title="PyMaterialXCore.ElementPredicate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ElementPredicate</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.NewlineElement.html#PyMaterialXCore.NewlineElement" title="PyMaterialXCore.NewlineElement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NewlineElement</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="elements/PyMaterialXCore.GenericElement.html#PyMaterialXCore.GenericElement" title="PyMaterialXCore.GenericElement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GenericElement</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.Node.html#PyMaterialXCore.Node" title="PyMaterialXCore.Node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Node</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="elements/PyMaterialXCore.GeomElement.html#PyMaterialXCore.GeomElement" title="PyMaterialXCore.GeomElement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeomElement</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.NodeDef.html#PyMaterialXCore.NodeDef" title="PyMaterialXCore.NodeDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NodeDef</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="elements/PyMaterialXCore.GeomInfo.html#PyMaterialXCore.GeomInfo" title="PyMaterialXCore.GeomInfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeomInfo</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.NodeGraph.html#PyMaterialXCore.NodeGraph" title="PyMaterialXCore.NodeGraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NodeGraph</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="elements/PyMaterialXCore.GeomProp.html#PyMaterialXCore.GeomProp" title="PyMaterialXCore.GeomProp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeomProp</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.NodePredicate.html#PyMaterialXCore.NodePredicate" title="PyMaterialXCore.NodePredicate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NodePredicate</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="elements/PyMaterialXCore.GeomPropDef.html#PyMaterialXCore.GeomPropDef" title="PyMaterialXCore.GeomPropDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GeomPropDef</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.Output.html#PyMaterialXCore.Output" title="PyMaterialXCore.Output"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Output</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="elements/PyMaterialXCore.GraphElement.html#PyMaterialXCore.GraphElement" title="PyMaterialXCore.GraphElement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GraphElement</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.PortElement.html#PyMaterialXCore.PortElement" title="PyMaterialXCore.PortElement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PortElement</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="iterators/PyMaterialXCore.GraphIterator.html#PyMaterialXCore.GraphIterator" title="PyMaterialXCore.GraphIterator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GraphIterator</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.Property.html#PyMaterialXCore.Property" title="PyMaterialXCore.Property"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Property</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="elements/PyMaterialXCore.Implementation.html#PyMaterialXCore.Implementation" title="PyMaterialXCore.Implementation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Implementation</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.PropertyAssign.html#PyMaterialXCore.PropertyAssign" title="PyMaterialXCore.PropertyAssign"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PropertyAssign</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="iterators/PyMaterialXCore.InheritanceIterator.html#PyMaterialXCore.InheritanceIterator" title="PyMaterialXCore.InheritanceIterator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InheritanceIterator</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.PropertySet.html#PyMaterialXCore.PropertySet" title="PyMaterialXCore.PropertySet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PropertySet</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="elements/PyMaterialXCore.Input.html#PyMaterialXCore.Input" title="PyMaterialXCore.Input"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Input</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.PropertySetAssign.html#PyMaterialXCore.PropertySetAssign" title="PyMaterialXCore.PropertySetAssign"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PropertySetAssign</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="elements/PyMaterialXCore.InterfaceElement.html#PyMaterialXCore.InterfaceElement" title="PyMaterialXCore.InterfaceElement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InterfaceElement</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.StringResolver.html#PyMaterialXCore.StringResolver" title="PyMaterialXCore.StringResolver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StringResolver</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="unit-converters/PyMaterialXCore.LinearUnitConverter.html#PyMaterialXCore.LinearUnitConverter" title="PyMaterialXCore.LinearUnitConverter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LinearUnitConverter</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.TargetDef.html#PyMaterialXCore.TargetDef" title="PyMaterialXCore.TargetDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TargetDef</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="elements/PyMaterialXCore.Look.html#PyMaterialXCore.Look" title="PyMaterialXCore.Look"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Look</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.Token.html#PyMaterialXCore.Token" title="PyMaterialXCore.Token"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Token</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="elements/PyMaterialXCore.LookGroup.html#PyMaterialXCore.LookGroup" title="PyMaterialXCore.LookGroup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LookGroup</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.TreeIterator.html#PyMaterialXCore.TreeIterator" title="PyMaterialXCore.TreeIterator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TreeIterator</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="elements/PyMaterialXCore.MaterialAssign.html#PyMaterialXCore.MaterialAssign" title="PyMaterialXCore.MaterialAssign"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MaterialAssign</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.TypeDef.html#PyMaterialXCore.TypeDef" title="PyMaterialXCore.TypeDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeDef</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="value-classes/PyMaterialXCore.Matrix33.html#PyMaterialXCore.Matrix33" title="PyMaterialXCore.Matrix33"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Matrix33</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.TypedElement.html#PyMaterialXCore.TypedElement" title="PyMaterialXCore.TypedElement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedElement</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="value-classes/PyMaterialXCore.Matrix44.html#PyMaterialXCore.Matrix44" title="PyMaterialXCore.Matrix44"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Matrix44</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.TypedValue_boolean.html#PyMaterialXCore.TypedValue_boolean" title="PyMaterialXCore.TypedValue_boolean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_boolean</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="value-classes/PyMaterialXCore.MatrixBase.html#PyMaterialXCore.MatrixBase" title="PyMaterialXCore.MatrixBase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MatrixBase</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.TypedValue_booleanarray.html#PyMaterialXCore.TypedValue_booleanarray" title="PyMaterialXCore.TypedValue_booleanarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_booleanarray</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="elements/PyMaterialXCore.Member.html#PyMaterialXCore.Member" title="PyMaterialXCore.Member"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Member</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.TypedValue_color3.html#PyMaterialXCore.TypedValue_color3" title="PyMaterialXCore.TypedValue_color3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_color3</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="elements/PyMaterialXCore.NewlineElement.html#PyMaterialXCore.NewlineElement" title="PyMaterialXCore.NewlineElement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NewlineElement</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.TypedValue_color4.html#PyMaterialXCore.TypedValue_color4" title="PyMaterialXCore.TypedValue_color4"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_color4</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="elements/PyMaterialXCore.Node.html#PyMaterialXCore.Node" title="PyMaterialXCore.Node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Node</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.TypedValue_float.html#PyMaterialXCore.TypedValue_float" title="PyMaterialXCore.TypedValue_float"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_float</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="elements/PyMaterialXCore.NodeDef.html#PyMaterialXCore.NodeDef" title="PyMaterialXCore.NodeDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NodeDef</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.TypedValue_floatarray.html#PyMaterialXCore.TypedValue_floatarray" title="PyMaterialXCore.TypedValue_floatarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_floatarray</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="elements/PyMaterialXCore.NodeGraph.html#PyMaterialXCore.NodeGraph" title="PyMaterialXCore.NodeGraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NodeGraph</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.TypedValue_integer.html#PyMaterialXCore.TypedValue_integer" title="PyMaterialXCore.TypedValue_integer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_integer</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="predicates/PyMaterialXCore.NodePredicate.html#PyMaterialXCore.NodePredicate" title="PyMaterialXCore.NodePredicate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NodePredicate</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.TypedValue_integerarray.html#PyMaterialXCore.TypedValue_integerarray" title="PyMaterialXCore.TypedValue_integerarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_integerarray</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="elements/PyMaterialXCore.Output.html#PyMaterialXCore.Output" title="PyMaterialXCore.Output"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Output</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.TypedValue_matrix33.html#PyMaterialXCore.TypedValue_matrix33" title="PyMaterialXCore.TypedValue_matrix33"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_matrix33</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="elements/PyMaterialXCore.PortElement.html#PyMaterialXCore.PortElement" title="PyMaterialXCore.PortElement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PortElement</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.TypedValue_matrix44.html#PyMaterialXCore.TypedValue_matrix44" title="PyMaterialXCore.TypedValue_matrix44"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_matrix44</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="elements/PyMaterialXCore.Property.html#PyMaterialXCore.Property" title="PyMaterialXCore.Property"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Property</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.TypedValue_string.html#PyMaterialXCore.TypedValue_string" title="PyMaterialXCore.TypedValue_string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_string</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="elements/PyMaterialXCore.PropertyAssign.html#PyMaterialXCore.PropertyAssign" title="PyMaterialXCore.PropertyAssign"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PropertyAssign</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.TypedValue_stringarray.html#PyMaterialXCore.TypedValue_stringarray" title="PyMaterialXCore.TypedValue_stringarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_stringarray</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="elements/PyMaterialXCore.PropertySet.html#PyMaterialXCore.PropertySet" title="PyMaterialXCore.PropertySet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PropertySet</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.TypedValue_vector2.html#PyMaterialXCore.TypedValue_vector2" title="PyMaterialXCore.TypedValue_vector2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_vector2</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="elements/PyMaterialXCore.PropertySetAssign.html#PyMaterialXCore.PropertySetAssign" title="PyMaterialXCore.PropertySetAssign"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PropertySetAssign</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.TypedValue_vector3.html#PyMaterialXCore.TypedValue_vector3" title="PyMaterialXCore.TypedValue_vector3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_vector3</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="elements/PyMaterialXCore.StringResolver.html#PyMaterialXCore.StringResolver" title="PyMaterialXCore.StringResolver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StringResolver</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.TypedValue_vector4.html#PyMaterialXCore.TypedValue_vector4" title="PyMaterialXCore.TypedValue_vector4"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_vector4</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="elements/PyMaterialXCore.TargetDef.html#PyMaterialXCore.TargetDef" title="PyMaterialXCore.TargetDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TargetDef</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.Unit.html#PyMaterialXCore.Unit" title="PyMaterialXCore.Unit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Unit</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="elements/PyMaterialXCore.Token.html#PyMaterialXCore.Token" title="PyMaterialXCore.Token"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Token</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.UnitConverter.html#PyMaterialXCore.UnitConverter" title="PyMaterialXCore.UnitConverter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnitConverter</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="iterators/PyMaterialXCore.TreeIterator.html#PyMaterialXCore.TreeIterator" title="PyMaterialXCore.TreeIterator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TreeIterator</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.UnitConverterRegistry.html#PyMaterialXCore.UnitConverterRegistry" title="PyMaterialXCore.UnitConverterRegistry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnitConverterRegistry</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="elements/PyMaterialXCore.TypeDef.html#PyMaterialXCore.TypeDef" title="PyMaterialXCore.TypeDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeDef</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.UnitDef.html#PyMaterialXCore.UnitDef" title="PyMaterialXCore.UnitDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnitDef</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="elements/PyMaterialXCore.TypedElement.html#PyMaterialXCore.TypedElement" title="PyMaterialXCore.TypedElement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedElement</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.UnitTypeDef.html#PyMaterialXCore.UnitTypeDef" title="PyMaterialXCore.UnitTypeDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnitTypeDef</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="value-classes/PyMaterialXCore.TypedValue_boolean.html#PyMaterialXCore.TypedValue_boolean" title="PyMaterialXCore.TypedValue_boolean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_boolean</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.Value.html#PyMaterialXCore.Value" title="PyMaterialXCore.Value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Value</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="value-classes/PyMaterialXCore.TypedValue_booleanarray.html#PyMaterialXCore.TypedValue_booleanarray" title="PyMaterialXCore.TypedValue_booleanarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_booleanarray</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.ValueElement.html#PyMaterialXCore.ValueElement" title="PyMaterialXCore.ValueElement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueElement</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="value-classes/PyMaterialXCore.TypedValue_color3.html#PyMaterialXCore.TypedValue_color3" title="PyMaterialXCore.TypedValue_color3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_color3</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.Variant.html#PyMaterialXCore.Variant" title="PyMaterialXCore.Variant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Variant</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="value-classes/PyMaterialXCore.TypedValue_color4.html#PyMaterialXCore.TypedValue_color4" title="PyMaterialXCore.TypedValue_color4"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_color4</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.VariantAssign.html#PyMaterialXCore.VariantAssign" title="PyMaterialXCore.VariantAssign"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VariantAssign</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="value-classes/PyMaterialXCore.TypedValue_float.html#PyMaterialXCore.TypedValue_float" title="PyMaterialXCore.TypedValue_float"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_float</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.VariantSet.html#PyMaterialXCore.VariantSet" title="PyMaterialXCore.VariantSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VariantSet</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="value-classes/PyMaterialXCore.TypedValue_floatarray.html#PyMaterialXCore.TypedValue_floatarray" title="PyMaterialXCore.TypedValue_floatarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_floatarray</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.Vector2.html#PyMaterialXCore.Vector2" title="PyMaterialXCore.Vector2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector2</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="value-classes/PyMaterialXCore.TypedValue_integer.html#PyMaterialXCore.TypedValue_integer" title="PyMaterialXCore.TypedValue_integer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_integer</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.Vector3.html#PyMaterialXCore.Vector3" title="PyMaterialXCore.Vector3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector3</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="value-classes/PyMaterialXCore.TypedValue_integerarray.html#PyMaterialXCore.TypedValue_integerarray" title="PyMaterialXCore.TypedValue_integerarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_integerarray</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.Vector4.html#PyMaterialXCore.Vector4" title="PyMaterialXCore.Vector4"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector4</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="value-classes/PyMaterialXCore.TypedValue_matrix33.html#PyMaterialXCore.TypedValue_matrix33" title="PyMaterialXCore.TypedValue_matrix33"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_matrix33</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.VectorBase.html#PyMaterialXCore.VectorBase" title="PyMaterialXCore.VectorBase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VectorBase</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="value-classes/PyMaterialXCore.TypedValue_matrix44.html#PyMaterialXCore.TypedValue_matrix44" title="PyMaterialXCore.TypedValue_matrix44"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_matrix44</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="value-classes/PyMaterialXCore.TypedValue_string.html#PyMaterialXCore.TypedValue_string" title="PyMaterialXCore.TypedValue_string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_string</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="value-classes/PyMaterialXCore.TypedValue_stringarray.html#PyMaterialXCore.TypedValue_stringarray" title="PyMaterialXCore.TypedValue_stringarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_stringarray</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="value-classes/PyMaterialXCore.TypedValue_vector2.html#PyMaterialXCore.TypedValue_vector2" title="PyMaterialXCore.TypedValue_vector2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_vector2</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="value-classes/PyMaterialXCore.TypedValue_vector3.html#PyMaterialXCore.TypedValue_vector3" title="PyMaterialXCore.TypedValue_vector3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_vector3</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="value-classes/PyMaterialXCore.TypedValue_vector4.html#PyMaterialXCore.TypedValue_vector4" title="PyMaterialXCore.TypedValue_vector4"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedValue_vector4</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="elements/PyMaterialXCore.Unit.html#PyMaterialXCore.Unit" title="PyMaterialXCore.Unit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Unit</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="unit-converters/PyMaterialXCore.UnitConverter.html#PyMaterialXCore.UnitConverter" title="PyMaterialXCore.UnitConverter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnitConverter</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="unit-converters/PyMaterialXCore.UnitConverterRegistry.html#PyMaterialXCore.UnitConverterRegistry" title="PyMaterialXCore.UnitConverterRegistry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnitConverterRegistry</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="elements/PyMaterialXCore.UnitDef.html#PyMaterialXCore.UnitDef" title="PyMaterialXCore.UnitDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnitDef</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="elements/PyMaterialXCore.UnitTypeDef.html#PyMaterialXCore.UnitTypeDef" title="PyMaterialXCore.UnitTypeDef"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnitTypeDef</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="value-classes/PyMaterialXCore.Value.html#PyMaterialXCore.Value" title="PyMaterialXCore.Value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Value</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="elements/PyMaterialXCore.ValueElement.html#PyMaterialXCore.ValueElement" title="PyMaterialXCore.ValueElement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueElement</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="elements/PyMaterialXCore.Variant.html#PyMaterialXCore.Variant" title="PyMaterialXCore.Variant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Variant</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="elements/PyMaterialXCore.VariantAssign.html#PyMaterialXCore.VariantAssign" title="PyMaterialXCore.VariantAssign"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VariantAssign</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="elements/PyMaterialXCore.VariantSet.html#PyMaterialXCore.VariantSet" title="PyMaterialXCore.VariantSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VariantSet</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="value-classes/PyMaterialXCore.Vector2.html#PyMaterialXCore.Vector2" title="PyMaterialXCore.Vector2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector2</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="value-classes/PyMaterialXCore.Vector3.html#PyMaterialXCore.Vector3" title="PyMaterialXCore.Vector3"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector3</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="value-classes/PyMaterialXCore.Vector4.html#PyMaterialXCore.Vector4" title="PyMaterialXCore.Vector4"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vector4</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="value-classes/PyMaterialXCore.VectorBase.html#PyMaterialXCore.VectorBase" title="PyMaterialXCore.VectorBase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VectorBase</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="elements/PyMaterialXCore.Visibility.html#PyMaterialXCore.Visibility" title="PyMaterialXCore.Visibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Visibility</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Exceptions</p>
-<table class="autosummary longtable docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="exceptions/PyMaterialXCore.Exception.html#PyMaterialXCore.Exception" title="PyMaterialXCore.Exception"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Exception</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="exceptions/PyMaterialXCore.ExceptionFoundCycle.html#PyMaterialXCore.ExceptionFoundCycle" title="PyMaterialXCore.ExceptionFoundCycle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ExceptionFoundCycle</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="exceptions/PyMaterialXCore.ExceptionOrphanedElement.html#PyMaterialXCore.ExceptionOrphanedElement" title="PyMaterialXCore.ExceptionOrphanedElement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ExceptionOrphanedElement</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.Visibility.html#PyMaterialXCore.Visibility" title="PyMaterialXCore.Visibility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Visibility</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
 </section>
+<section id="exception-types">
+<h2>Exception Types<a class="headerlink" href="#exception-types" title="Link to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.Exception.html#PyMaterialXCore.Exception" title="PyMaterialXCore.Exception"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Exception</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="PyMaterialXCore.ExceptionFoundCycle.html#PyMaterialXCore.ExceptionFoundCycle" title="PyMaterialXCore.ExceptionFoundCycle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ExceptionFoundCycle</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="PyMaterialXCore.ExceptionOrphanedElement.html#PyMaterialXCore.ExceptionOrphanedElement" title="PyMaterialXCore.ExceptionOrphanedElement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ExceptionOrphanedElement</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="module-functions">
+<h2>Module Functions<a class="headerlink" href="#module-functions" title="Link to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.createDocument" title="PyMaterialXCore.createDocument"><code class="xref py py-obj docutils literal notranslate"><span class="pre">createDocument</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.createNamePath" title="PyMaterialXCore.createNamePath"><code class="xref py py-obj docutils literal notranslate"><span class="pre">createNamePath</span></code></a>(arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.createValidName" title="PyMaterialXCore.createValidName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">createValidName</span></code></a>(name[, replaceChar])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.geomStringsMatch" title="PyMaterialXCore.geomStringsMatch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geomStringsMatch</span></code></a>(arg0, arg1, arg2)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.getConnectedOutputs" title="PyMaterialXCore.getConnectedOutputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getConnectedOutputs</span></code></a>(arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.getGeometryBindings" title="PyMaterialXCore.getGeometryBindings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getGeometryBindings</span></code></a>(materialNode[, geom])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.getShaderNodes" title="PyMaterialXCore.getShaderNodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getShaderNodes</span></code></a>(materialNode[, nodeType, target])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.getVersionIntegers" title="PyMaterialXCore.getVersionIntegers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVersionIntegers</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.getVersionString" title="PyMaterialXCore.getVersionString"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getVersionString</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.incrementName" title="PyMaterialXCore.incrementName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">incrementName</span></code></a>(arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.isValidName" title="PyMaterialXCore.isValidName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isValidName</span></code></a>(arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.joinStrings" title="PyMaterialXCore.joinStrings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">joinStrings</span></code></a>(arg0, arg1)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.parentNamePath" title="PyMaterialXCore.parentNamePath"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parentNamePath</span></code></a>(arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.prettyPrint" title="PyMaterialXCore.prettyPrint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prettyPrint</span></code></a>(arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.replaceSubstrings" title="PyMaterialXCore.replaceSubstrings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replaceSubstrings</span></code></a>(arg0, arg1)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.splitNamePath" title="PyMaterialXCore.splitNamePath"><code class="xref py py-obj docutils literal notranslate"><span class="pre">splitNamePath</span></code></a>(arg0)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.splitString" title="PyMaterialXCore.splitString"><code class="xref py py-obj docutils literal notranslate"><span class="pre">splitString</span></code></a>(arg0, arg1)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.stringEndsWith" title="PyMaterialXCore.stringEndsWith"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stringEndsWith</span></code></a>(arg0, arg1)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.stringStartsWith" title="PyMaterialXCore.stringStartsWith"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stringStartsWith</span></code></a>(arg0, arg1)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.targetStringsMatch" title="PyMaterialXCore.targetStringsMatch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">targetStringsMatch</span></code></a>(arg0, arg1)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<section id="pymaterialxcore-module-function-documentation">
+<h3>PyMaterialXCore Module Function Documentation<a class="headerlink" href="#pymaterialxcore-module-function-documentation" title="Link to this heading">¶</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXCore.createDocument">
+<span class="sig-name descname"><span class="pre">createDocument</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="PyMaterialXCore.Document.html#PyMaterialXCore.Document" title="PyMaterialXCore.Document"><span class="pre">Document</span></a></span></span><a class="headerlink" href="#PyMaterialXCore.createDocument" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXCore.createNamePath">
+<span class="sig-name descname"><span class="pre">createNamePath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#PyMaterialXCore.createNamePath" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXCore.createValidName">
+<span class="sig-name descname"><span class="pre">createValidName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replaceChar</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'_'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#PyMaterialXCore.createValidName" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXCore.geomStringsMatch">
+<span class="sig-name descname"><span class="pre">geomStringsMatch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#PyMaterialXCore.geomStringsMatch" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXCore.getConnectedOutputs">
+<span class="sig-name descname"><span class="pre">getConnectedOutputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="PyMaterialXCore.Node.html#PyMaterialXCore.Node" title="PyMaterialXCore.Node"><span class="pre">Node</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="PyMaterialXCore.Output.html#PyMaterialXCore.Output" title="PyMaterialXCore.Output"><span class="pre">Output</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXCore.getConnectedOutputs" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXCore.getGeometryBindings">
+<span class="sig-name descname"><span class="pre">getGeometryBindings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">materialNode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="PyMaterialXCore.Node.html#PyMaterialXCore.Node" title="PyMaterialXCore.Node"><span class="pre">Node</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="PyMaterialXCore.MaterialAssign.html#PyMaterialXCore.MaterialAssign" title="PyMaterialXCore.MaterialAssign"><span class="pre">MaterialAssign</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXCore.getGeometryBindings" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXCore.getShaderNodes">
+<span class="sig-name descname"><span class="pre">getShaderNodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">materialNode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="PyMaterialXCore.Node.html#PyMaterialXCore.Node" title="PyMaterialXCore.Node"><span class="pre">Node</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodeType</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'surfaceshader'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="PyMaterialXCore.Node.html#PyMaterialXCore.Node" title="PyMaterialXCore.Node"><span class="pre">Node</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXCore.getShaderNodes" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXCore.getVersionIntegers">
+<span class="sig-name descname"><span class="pre">getVersionIntegers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXCore.getVersionIntegers" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXCore.getVersionString">
+<span class="sig-name descname"><span class="pre">getVersionString</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#PyMaterialXCore.getVersionString" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXCore.incrementName">
+<span class="sig-name descname"><span class="pre">incrementName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#PyMaterialXCore.incrementName" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXCore.isValidName">
+<span class="sig-name descname"><span class="pre">isValidName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#PyMaterialXCore.isValidName" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXCore.joinStrings">
+<span class="sig-name descname"><span class="pre">joinStrings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#PyMaterialXCore.joinStrings" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXCore.parentNamePath">
+<span class="sig-name descname"><span class="pre">parentNamePath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#PyMaterialXCore.parentNamePath" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXCore.prettyPrint">
+<span class="sig-name descname"><span class="pre">prettyPrint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="PyMaterialXCore.Element.html#PyMaterialXCore.Element" title="PyMaterialXCore.Element"><span class="pre">Element</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#PyMaterialXCore.prettyPrint" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXCore.replaceSubstrings">
+<span class="sig-name descname"><span class="pre">replaceSubstrings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#PyMaterialXCore.replaceSubstrings" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXCore.splitNamePath">
+<span class="sig-name descname"><span class="pre">splitNamePath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXCore.splitNamePath" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXCore.splitString">
+<span class="sig-name descname"><span class="pre">splitString</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXCore.splitString" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXCore.stringEndsWith">
+<span class="sig-name descname"><span class="pre">stringEndsWith</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#PyMaterialXCore.stringEndsWith" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXCore.stringStartsWith">
+<span class="sig-name descname"><span class="pre">stringStartsWith</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#PyMaterialXCore.stringStartsWith" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyMaterialXCore.targetStringsMatch">
+<span class="sig-name descname"><span class="pre">targetStringsMatch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#PyMaterialXCore.targetStringsMatch" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <p>Module source:
 <a class="reference external" href="https://github.com/AcademySoftwareFoundation/MaterialX/tree/main">MaterialX</a> /
 <a class="reference external" href="https://github.com/AcademySoftwareFoundation/MaterialX/tree/main/source">source</a> /
 <a class="reference external" href="https://github.com/AcademySoftwareFoundation/MaterialX/tree/main/source/PyMaterialX">PyMaterialX</a> /
 <a class="reference external" href="https://github.com/AcademySoftwareFoundation/MaterialX/tree/main/source/PyMaterialX/PyMaterialXCore">PyMaterialXCore</a> /</p>
+</section>
+</section>
 </section>
 
 
@@ -410,7 +516,9 @@ look-development content across applications and renderers.
 <p class="caption" role="heading"><span class="caption-text">MaterialX Python Modules:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">PyMaterialXCore</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#alphabetical-index">Alphabetical Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exception-types">Exception Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-functions">Module Functions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="PyMaterialXFormat.html">PyMaterialXFormat</a></li>
