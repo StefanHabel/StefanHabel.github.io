@@ -39,6 +39,20 @@
 <dt class="sig sig-object py" id="PyMaterialXCore.StringResolver">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">StringResolver</span></span><a class="headerlink" href="#PyMaterialXCore.StringResolver" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<p>A helper object for applying string modifiers to data values in the context
+of a specific element and geometry.</p>
+<p>A <a class="reference internal" href="#PyMaterialXCore.StringResolver" title="PyMaterialXCore.StringResolver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StringResolver</span></code></a> may be constructed through the <a class="reference internal" href="PyMaterialXCore.Element.html#PyMaterialXCore.Element.createStringResolver" title="PyMaterialXCore.Element.createStringResolver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Element.createStringResolver()</span></code></a>
+method, which initializes it in the context of a specific <a class="reference internal" href="PyMaterialXCore.Element.html#PyMaterialXCore.Element" title="PyMaterialXCore.Element"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Element</span></code></a>, geometry,
+and material.</p>
+<p>Calling the <a class="reference internal" href="#PyMaterialXCore.StringResolver.resolve" title="PyMaterialXCore.StringResolver.resolve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StringResolver.resolve()</span></code></a> method applies all modifiers to a
+particular string value.</p>
+<p>Methods such as <a class="reference internal" href="#PyMaterialXCore.StringResolver.setFilePrefix" title="PyMaterialXCore.StringResolver.setFilePrefix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StringResolver.setFilePrefix()</span></code></a> may be used to edit the
+stored string modifiers before calling <a class="reference internal" href="#PyMaterialXCore.StringResolver.resolve" title="PyMaterialXCore.StringResolver.resolve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StringResolver.resolve()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">See<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://materialx.org/docs/api/class_string_resolver.html">https://materialx.org/docs/api/class_string_resolver.html</a></p>
+</dd>
+</dl>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>

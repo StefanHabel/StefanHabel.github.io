@@ -39,6 +39,19 @@
 <dt class="sig sig-object py" id="PyMaterialXCore.Edge">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Edge</span></span><a class="headerlink" href="#PyMaterialXCore.Edge" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<p>An edge between two connected <a class="reference internal" href="PyMaterialXCore.Element.html#PyMaterialXCore.Element" title="PyMaterialXCore.Element"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Element</span></code></a> objects, returned during graph traversal.</p>
+<p>A valid <a class="reference internal" href="#PyMaterialXCore.Edge" title="PyMaterialXCore.Edge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Edge</span></code></a> consists of a downstream element, an upstream element, and
+optionally a connecting element that binds them.  As an example, the edge
+between two <a class="reference internal" href="PyMaterialXCore.Node.html#PyMaterialXCore.Node" title="PyMaterialXCore.Node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Node</span></code></a> elements will contain a connecting element for the <a class="reference internal" href="PyMaterialXCore.Input.html#PyMaterialXCore.Input" title="PyMaterialXCore.Input"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Input</span></code></a>
+of the downstream <a class="reference internal" href="PyMaterialXCore.Node.html#PyMaterialXCore.Node" title="PyMaterialXCore.Node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Node</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">See<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="PyMaterialXCore.Element.html#PyMaterialXCore.Element.traverseGraph" title="PyMaterialXCore.Element.traverseGraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Element.traverseGraph()</span></code></a></p>
+</dd>
+<dt class="field-even">See<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://materialx.org/docs/api/class_edge.html">https://materialx.org/docs/api/class_edge.html</a></p>
+</dd>
+</dl>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
