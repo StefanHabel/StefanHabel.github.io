@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>PyMaterialXCore.ElementPredicate &#8212; MaterialX 1.39.2 documentation</title>
+    <title>PyMaterialXCore.ElementEquivalenceResult &#8212; MaterialX 1.39.2 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b20cc3f5" />
     <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=c058f7c8" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=d8f72ed4" />
@@ -14,8 +14,8 @@
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="PyMaterialXCore.GenericElement" href="PyMaterialXCore.GenericElement.html" />
-    <link rel="prev" title="PyMaterialXCore.ElementEquivalenceResult" href="PyMaterialXCore.ElementEquivalenceResult.html" />
+    <link rel="next" title="PyMaterialXCore.ElementPredicate" href="PyMaterialXCore.ElementPredicate.html" />
+    <link rel="prev" title="PyMaterialXCore.ElementEquivalenceOptions" href="PyMaterialXCore.ElementEquivalenceOptions.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -33,27 +33,88 @@
 
           <div class="body" role="main">
             
-  <section id="pymaterialxcore-elementpredicate">
-<h1>PyMaterialXCore.ElementPredicate<a class="headerlink" href="#pymaterialxcore-elementpredicate" title="Link to this heading">¶</a></h1>
+  <section id="pymaterialxcore-elementequivalenceresult">
+<h1>PyMaterialXCore.ElementEquivalenceResult<a class="headerlink" href="#pymaterialxcore-elementequivalenceresult" title="Link to this heading">¶</a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="PyMaterialXCore.ElementPredicate">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ElementPredicate</span></span><a class="headerlink" href="#PyMaterialXCore.ElementPredicate" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="PyMaterialXCore.ElementEquivalenceResult">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ElementEquivalenceResult</span></span><a class="headerlink" href="#PyMaterialXCore.ElementEquivalenceResult" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
-<p>A function that takes an <a class="reference internal" href="PyMaterialXCore.Element.html#PyMaterialXCore.Element" title="PyMaterialXCore.Element"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Element</span></code></a> and returns a <code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>,
-to check whether some criteria has passed.</p>
+<p>A comparison result for the functional equivalence of two elements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">See<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://materialx.org/docs/api/class_element_equivalence_result.html">https://materialx.org/docs/api/class_element_equivalence_result.html</a></p>
+</dd>
+</dl>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.ElementPredicate.__init__" title="PyMaterialXCore.ElementPredicate.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(*args, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.ElementEquivalenceResult.__init__" title="PyMaterialXCore.ElementEquivalenceResult.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(*args, **kwargs)</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
+<section id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Link to this heading">¶</a></h2>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyMaterialXCore.ElementEquivalenceResult.ATTRIBUTE">
+<span class="sig-name descname"><span class="pre">ATTRIBUTE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'attribute'</span></em><a class="headerlink" href="#PyMaterialXCore.ElementEquivalenceResult.ATTRIBUTE" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyMaterialXCore.ElementEquivalenceResult.ATTRIBUTE_NAMES">
+<span class="sig-name descname"><span class="pre">ATTRIBUTE_NAMES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'attribute</span> <span class="pre">names'</span></em><a class="headerlink" href="#PyMaterialXCore.ElementEquivalenceResult.ATTRIBUTE_NAMES" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyMaterialXCore.ElementEquivalenceResult.CATEGORY">
+<span class="sig-name descname"><span class="pre">CATEGORY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'category'</span></em><a class="headerlink" href="#PyMaterialXCore.ElementEquivalenceResult.CATEGORY" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyMaterialXCore.ElementEquivalenceResult.CHILD_COUNT">
+<span class="sig-name descname"><span class="pre">CHILD_COUNT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'child</span> <span class="pre">count'</span></em><a class="headerlink" href="#PyMaterialXCore.ElementEquivalenceResult.CHILD_COUNT" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyMaterialXCore.ElementEquivalenceResult.CHILD_NAME">
+<span class="sig-name descname"><span class="pre">CHILD_NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'child</span> <span class="pre">name'</span></em><a class="headerlink" href="#PyMaterialXCore.ElementEquivalenceResult.CHILD_NAME" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyMaterialXCore.ElementEquivalenceResult.NAME">
+<span class="sig-name descname"><span class="pre">NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'name'</span></em><a class="headerlink" href="#PyMaterialXCore.ElementEquivalenceResult.NAME" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyMaterialXCore.ElementEquivalenceResult.attributeName">
+<span class="sig-name descname"><span class="pre">attributeName</span></span><a class="headerlink" href="#PyMaterialXCore.ElementEquivalenceResult.attributeName" title="Link to this definition">¶</a></dt>
+<dd><p>No docstring available for PyMaterialXCore.ElementEquivalenceResult.attributeName</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyMaterialXCore.ElementEquivalenceResult.differenceType">
+<span class="sig-name descname"><span class="pre">differenceType</span></span><a class="headerlink" href="#PyMaterialXCore.ElementEquivalenceResult.differenceType" title="Link to this definition">¶</a></dt>
+<dd><p>No docstring available for PyMaterialXCore.ElementEquivalenceResult.differenceType</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyMaterialXCore.ElementEquivalenceResult.path1">
+<span class="sig-name descname"><span class="pre">path1</span></span><a class="headerlink" href="#PyMaterialXCore.ElementEquivalenceResult.path1" title="Link to this definition">¶</a></dt>
+<dd><p>No docstring available for PyMaterialXCore.ElementEquivalenceResult.path1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyMaterialXCore.ElementEquivalenceResult.path2">
+<span class="sig-name descname"><span class="pre">path2</span></span><a class="headerlink" href="#PyMaterialXCore.ElementEquivalenceResult.path2" title="Link to this definition">¶</a></dt>
+<dd><p>No docstring available for PyMaterialXCore.ElementEquivalenceResult.path2</p>
+</dd></dl>
+
+</section>
 <section id="methods">
 <h2>Methods<a class="headerlink" href="#methods" title="Link to this heading">¶</a></h2>
 <dl class="py method">
-<dt class="sig sig-object py" id="PyMaterialXCore.ElementPredicate.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyMaterialXCore.ElementPredicate.__init__" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="PyMaterialXCore.ElementEquivalenceResult.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PyMaterialXCore.ElementEquivalenceResult.__init__" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </section>
@@ -167,7 +228,7 @@ look-development content across applications and renderers.
       &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
       
       |
-      <a href="../_sources/generated/PyMaterialXCore.ElementPredicate.rst.txt"
+      <a href="../_sources/generated/PyMaterialXCore.ElementEquivalenceResult.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

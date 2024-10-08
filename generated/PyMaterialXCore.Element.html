@@ -14,7 +14,7 @@
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="PyMaterialXCore.ElementPredicate" href="PyMaterialXCore.ElementPredicate.html" />
+    <link rel="next" title="PyMaterialXCore.ElementEquivalenceOptions" href="PyMaterialXCore.ElementEquivalenceOptions.html" />
     <link rel="prev" title="PyMaterialXCore.Edge" href="PyMaterialXCore.Edge.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -189,58 +189,61 @@ and <a class="reference internal" href="PyMaterialXCore.VariantAssign.html#PyMat
 <tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.hasSourceUri" title="PyMaterialXCore.Element.hasSourceUri"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasSourceUri</span></code></a>(self)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.removeAttribute" title="PyMaterialXCore.Element.removeAttribute"><code class="xref py py-obj docutils literal notranslate"><span class="pre">removeAttribute</span></code></a>(self, arg0)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.isEquivalent" title="PyMaterialXCore.Element.isEquivalent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isEquivalent</span></code></a>(self, arg0, arg1)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.removeChild" title="PyMaterialXCore.Element.removeChild"><code class="xref py py-obj docutils literal notranslate"><span class="pre">removeChild</span></code></a>(self, arg0)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.removeAttribute" title="PyMaterialXCore.Element.removeAttribute"><code class="xref py py-obj docutils literal notranslate"><span class="pre">removeAttribute</span></code></a>(self, arg0)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.setAttribute" title="PyMaterialXCore.Element.setAttribute"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setAttribute</span></code></a>(self, arg0, arg1)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.removeChild" title="PyMaterialXCore.Element.removeChild"><code class="xref py py-obj docutils literal notranslate"><span class="pre">removeChild</span></code></a>(self, arg0)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.setCategory" title="PyMaterialXCore.Element.setCategory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setCategory</span></code></a>(self, arg0)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.setAttribute" title="PyMaterialXCore.Element.setAttribute"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setAttribute</span></code></a>(self, arg0, arg1)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.setChildIndex" title="PyMaterialXCore.Element.setChildIndex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setChildIndex</span></code></a>(self, arg0, arg1)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.setCategory" title="PyMaterialXCore.Element.setCategory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setCategory</span></code></a>(self, arg0)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.setColorSpace" title="PyMaterialXCore.Element.setColorSpace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setColorSpace</span></code></a>(self, arg0)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.setChildIndex" title="PyMaterialXCore.Element.setChildIndex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setChildIndex</span></code></a>(self, arg0, arg1)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.setDocString" title="PyMaterialXCore.Element.setDocString"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setDocString</span></code></a>(self, arg0)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.setColorSpace" title="PyMaterialXCore.Element.setColorSpace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setColorSpace</span></code></a>(self, arg0)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.setFilePrefix" title="PyMaterialXCore.Element.setFilePrefix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setFilePrefix</span></code></a>(self, arg0)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.setDocString" title="PyMaterialXCore.Element.setDocString"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setDocString</span></code></a>(self, arg0)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.setGeomPrefix" title="PyMaterialXCore.Element.setGeomPrefix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setGeomPrefix</span></code></a>(self, arg0)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.setFilePrefix" title="PyMaterialXCore.Element.setFilePrefix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setFilePrefix</span></code></a>(self, arg0)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.setInheritString" title="PyMaterialXCore.Element.setInheritString"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setInheritString</span></code></a>(self, arg0)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.setGeomPrefix" title="PyMaterialXCore.Element.setGeomPrefix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setGeomPrefix</span></code></a>(self, arg0)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.setInheritsFrom" title="PyMaterialXCore.Element.setInheritsFrom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setInheritsFrom</span></code></a>(self, arg0)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.setInheritString" title="PyMaterialXCore.Element.setInheritString"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setInheritString</span></code></a>(self, arg0)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.setName" title="PyMaterialXCore.Element.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(self, arg0)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.setInheritsFrom" title="PyMaterialXCore.Element.setInheritsFrom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setInheritsFrom</span></code></a>(self, arg0)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.setNamespace" title="PyMaterialXCore.Element.setNamespace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setNamespace</span></code></a>(self, arg0)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.setName" title="PyMaterialXCore.Element.setName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setName</span></code></a>(self, arg0)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.setSourceUri" title="PyMaterialXCore.Element.setSourceUri"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setSourceUri</span></code></a>(self, arg0)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.setNamespace" title="PyMaterialXCore.Element.setNamespace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setNamespace</span></code></a>(self, arg0)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.traverseGraph" title="PyMaterialXCore.Element.traverseGraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">traverseGraph</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.setSourceUri" title="PyMaterialXCore.Element.setSourceUri"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setSourceUri</span></code></a>(self, arg0)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.traverseInheritance" title="PyMaterialXCore.Element.traverseInheritance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">traverseInheritance</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.traverseGraph" title="PyMaterialXCore.Element.traverseGraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">traverseGraph</span></code></a>(self)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.traverseTree" title="PyMaterialXCore.Element.traverseTree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">traverseTree</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.traverseInheritance" title="PyMaterialXCore.Element.traverseInheritance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">traverseInheritance</span></code></a>(self)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.validate" title="PyMaterialXCore.Element.validate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.traverseTree" title="PyMaterialXCore.Element.traverseTree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">traverseTree</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PyMaterialXCore.Element.validate" title="PyMaterialXCore.Element.validate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate</span></code></a>(self)</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -518,6 +521,11 @@ and <a class="reference internal" href="PyMaterialXCore.VariantAssign.html#PyMat
 <dl class="py method">
 <dt class="sig sig-object py" id="PyMaterialXCore.Element.hasSourceUri">
 <span class="sig-name descname"><span class="pre">hasSourceUri</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Element" title="PyMaterialXCore.Element"><span class="pre">Element</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#PyMaterialXCore.Element.hasSourceUri" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyMaterialXCore.Element.isEquivalent">
+<span class="sig-name descname"><span class="pre">isEquivalent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Element" title="PyMaterialXCore.Element"><span class="pre">Element</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#PyMaterialXCore.Element" title="PyMaterialXCore.Element"><span class="pre">Element</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="PyMaterialXCore.ElementEquivalenceOptions.html#PyMaterialXCore.ElementEquivalenceOptions" title="PyMaterialXCore.ElementEquivalenceOptions"><span class="pre">ElementEquivalenceOptions</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="PyMaterialXCore.ElementEquivalenceResult.html#PyMaterialXCore.ElementEquivalenceResult" title="PyMaterialXCore.ElementEquivalenceResult"><span class="pre">ElementEquivalenceResult</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#PyMaterialXCore.Element.isEquivalent" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
