@@ -39,6 +39,23 @@
 <dt class="sig sig-object py" id="PyMaterialXRenderOsl.OslRenderer">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">OslRenderer</span></span><a class="headerlink" href="#PyMaterialXRenderOsl.OslRenderer" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="PyMaterialXRender.ShaderRenderer.html#PyMaterialXRender.ShaderRenderer" title="PyMaterialXRender.ShaderRenderer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ShaderRenderer</span></code></a></p>
+<p>Helper class for rendering generated OSL code to produce images.</p>
+<dl class="simple">
+<dt>The main services provided are:</dt><dd><ul class="simple">
+<li><p>Source code validation: Use of <code class="xref py py-obj docutils literal notranslate"><span class="pre">oslc</span></code> to compile and test output results</p></li>
+<li><p>Introspection check: None at this time.</p></li>
+<li><p>Binding: None at this time.</p></li>
+<li><p>Render validation: Use of <code class="xref py py-obj docutils literal notranslate"><span class="pre">testrender</span></code> to output rendered images.
+Assumes source compliation was success as it depends on the existence
+of corresponding <code class="xref py py-obj docutils literal notranslate"><span class="pre">oso</span></code> files.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">See<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://materialx.org/docs/api/class_osl_renderer.html">https://materialx.org/docs/api/class_osl_renderer.html</a></p>
+</dd>
+</dl>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>

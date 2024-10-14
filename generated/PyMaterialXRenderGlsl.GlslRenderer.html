@@ -39,6 +39,26 @@
 <dt class="sig sig-object py" id="PyMaterialXRenderGlsl.GlslRenderer">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GlslRenderer</span></span><a class="headerlink" href="#PyMaterialXRenderGlsl.GlslRenderer" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="PyMaterialXRender.ShaderRenderer.html#PyMaterialXRender.ShaderRenderer" title="PyMaterialXRender.ShaderRenderer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ShaderRenderer</span></code></a></p>
+<p>Helper class for rendering generated GLSL code to produce images.</p>
+<p>There are two main interfaces which can be used:
+one which takes in a <code class="xref py py-obj docutils literal notranslate"><span class="pre">HwShader</span></code> and
+one which allows for explicit setting of shader stage code.</p>
+<dl class="simple">
+<dt>The main services provided are:</dt><dd><ul class="simple">
+<li><p>Validation: All shader stages are compiled and atteched to a GLSL shader program.</p></li>
+<li><p>Introspection: The compiled shader program is examined for uniforms and attributes.</p></li>
+<li><p>Binding: Uniforms and attributes which match the predefined variables generated the GLSL code generator
+will have values assigned to this. This includes matrices, attribute streams, and textures.</p></li>
+<li><p>Rendering: The program with bound inputs will be used to drawing geometry to an offscreen buffer.
+An interface is provided to save this offscreen buffer to disk using an externally defined image handler.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">See<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://materialx.org/docs/api/class_glsl_renderer.html">https://materialx.org/docs/api/class_glsl_renderer.html</a></p>
+</dd>
+</dl>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>

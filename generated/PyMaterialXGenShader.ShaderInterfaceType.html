@@ -39,9 +39,12 @@
 <dt class="sig sig-object py" id="PyMaterialXGenShader.ShaderInterfaceType">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ShaderInterfaceType</span></span><a class="headerlink" href="#PyMaterialXGenShader.ShaderInterfaceType" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<p>Type of shader interface to be generated</p>
 <p>Members:</p>
-<p>SHADER_INTERFACE_COMPLETE</p>
-<p>SHADER_INTERFACE_REDUCED</p>
+<blockquote>
+<div><p>SHADER_INTERFACE_COMPLETE : Create a complete interface with uniforms for all editable inputs on all nodes used by the shader. This interface makes the shader fully editable by value without requiring any rebuilds. This is the default interface type.</p>
+<p>SHADER_INTERFACE_REDUCED : Create a reduced interface with uniforms only for the inputs that has been declared in the shaders nodedef interface. If values on other inputs are changed the shader needs to be rebuilt.</p>
+</div></blockquote>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
@@ -55,26 +58,22 @@
 <dl class="py attribute">
 <dt class="sig sig-object py" id="PyMaterialXGenShader.ShaderInterfaceType.SHADER_INTERFACE_COMPLETE">
 <span class="sig-name descname"><span class="pre">SHADER_INTERFACE_COMPLETE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;ShaderInterfaceType.SHADER_INTERFACE_COMPLETE:</span> <span class="pre">0&gt;</span></em><a class="headerlink" href="#PyMaterialXGenShader.ShaderInterfaceType.SHADER_INTERFACE_COMPLETE" title="Link to this definition">¶</a></dt>
-<dd><p>No docstring available for PyMaterialXGenShader.ShaderInterfaceType.SHADER_INTERFACE_COMPLETE</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="PyMaterialXGenShader.ShaderInterfaceType.SHADER_INTERFACE_REDUCED">
 <span class="sig-name descname"><span class="pre">SHADER_INTERFACE_REDUCED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;ShaderInterfaceType.SHADER_INTERFACE_REDUCED:</span> <span class="pre">1&gt;</span></em><a class="headerlink" href="#PyMaterialXGenShader.ShaderInterfaceType.SHADER_INTERFACE_REDUCED" title="Link to this definition">¶</a></dt>
-<dd><p>No docstring available for PyMaterialXGenShader.ShaderInterfaceType.SHADER_INTERFACE_REDUCED</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="PyMaterialXGenShader.ShaderInterfaceType.name">
 <span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#PyMaterialXGenShader.ShaderInterfaceType.name" title="Link to this definition">¶</a></dt>
-<dd><p>No docstring available for PyMaterialXGenShader.ShaderInterfaceType.name</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="PyMaterialXGenShader.ShaderInterfaceType.value">
 <span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#PyMaterialXGenShader.ShaderInterfaceType.value" title="Link to this definition">¶</a></dt>
-<dd><p>No docstring available for PyMaterialXGenShader.ShaderInterfaceType.value</p>
-</dd></dl>
+<dd></dd></dl>
 
 </section>
 <section id="methods">

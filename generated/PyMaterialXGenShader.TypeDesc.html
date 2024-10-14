@@ -39,6 +39,22 @@
 <dt class="sig sig-object py" id="PyMaterialXGenShader.TypeDesc">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TypeDesc</span></span><a class="headerlink" href="#PyMaterialXGenShader.TypeDesc" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<p>A type descriptor for MaterialX data types.</p>
+<p>All types need to have a type descriptor registered in order for shader generators
+to know about the type. It can be used for type comparisons as well as getting more
+information about the type. Type descriptors for all standard library data types are
+registered by default and can be accessed from the <code class="xref py py-obj docutils literal notranslate"><span class="pre">Type</span></code> namespace, e.g. <code class="xref py py-obj docutils literal notranslate"><span class="pre">Type::FLOAT</span></code>.</p>
+<p>To register custom types use the macro <code class="xref py py-obj docutils literal notranslate"><span class="pre">TYPEDESC_DEFINE_TYPE</span></code> to define it in a header
+and the macro <code class="xref py py-obj docutils literal notranslate"><span class="pre">TYPEDESC_REGISTER_TYPE</span></code> to register it in the type registry. Registration
+must be done in order to access the type’s name later using <a class="reference internal" href="#PyMaterialXGenShader.TypeDesc.getName" title="PyMaterialXGenShader.TypeDesc.getName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getName()</span></code></a> and to find the
+type by name using <a class="reference internal" href="#PyMaterialXGenShader.TypeDesc.get" title="PyMaterialXGenShader.TypeDesc.get"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeDesc.get()</span></code></a>.</p>
+<p>The class is a POD type of 64-bits and can efficiently be stored and passed by value.
+Type compare operations and hash operations are done using a precomputed hash value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">See<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://materialx.org/docs/api/class_type_desc.html">https://materialx.org/docs/api/class_type_desc.html</a></p>
+</dd>
+</dl>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>

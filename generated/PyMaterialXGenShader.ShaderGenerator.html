@@ -39,6 +39,15 @@
 <dt class="sig sig-object py" id="PyMaterialXGenShader.ShaderGenerator">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ShaderGenerator</span></span><a class="headerlink" href="#PyMaterialXGenShader.ShaderGenerator" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<p>Base class for shader generators.</p>
+<p>All third-party shader generators should derive from this class.</p>
+<p>Derived classes should use <code class="xref py py-obj docutils literal notranslate"><span class="pre">DECLARE_SHADER_GENERATOR</span></code> / <code class="xref py py-obj docutils literal notranslate"><span class="pre">DEFINE_SHADER_GENERATOR</span></code>
+in their declaration / definition, and register with the <code class="xref py py-obj docutils literal notranslate"><span class="pre">Registry</span></code> class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">See<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://materialx.org/docs/api/class_shader_generator.html">https://materialx.org/docs/api/class_shader_generator.html</a></p>
+</dd>
+</dl>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>

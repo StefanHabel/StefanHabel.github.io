@@ -39,6 +39,17 @@
 <dt class="sig sig-object py" id="PyMaterialXGenShader.Shader">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Shader</span></span><a class="headerlink" href="#PyMaterialXGenShader.Shader" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<p>Class containing all data needed during shader generation.</p>
+<p>After generation is completed it will contain the resulting source code
+emitted by shader generators.</p>
+<p>The class contains a default implementation using a single shader stage.
+Derived shaders can override this, as well as overriding all methods
+that add code to the shader.</p>
+<dl class="field-list simple">
+<dt class="field-odd">See<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://materialx.org/docs/api/class_shader.html">https://materialx.org/docs/api/class_shader.html</a></p>
+</dd>
+</dl>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>

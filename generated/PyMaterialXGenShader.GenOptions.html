@@ -39,6 +39,12 @@
 <dt class="sig sig-object py" id="PyMaterialXGenShader.GenOptions">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GenOptions</span></span><a class="headerlink" href="#PyMaterialXGenShader.GenOptions" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<p>Class holding options to configure shader generation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">See<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://materialx.org/docs/api/class_gen_options.html">https://materialx.org/docs/api/class_gen_options.html</a></p>
+</dd>
+</dl>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
@@ -52,109 +58,155 @@
 <dl class="py attribute">
 <dt class="sig sig-object py" id="PyMaterialXGenShader.GenOptions.addUpstreamDependencies">
 <span class="sig-name descname"><span class="pre">addUpstreamDependencies</span></span><a class="headerlink" href="#PyMaterialXGenShader.GenOptions.addUpstreamDependencies" title="Link to this definition">¶</a></dt>
-<dd><p>No docstring available for PyMaterialXGenShader.GenOptions.addUpstreamDependencies</p>
+<dd><p>(<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>)
+Sets whether to include upstream dependencies
+for the element to generate a shader for.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="PyMaterialXGenShader.GenOptions.emitColorTransforms">
 <span class="sig-name descname"><span class="pre">emitColorTransforms</span></span><a class="headerlink" href="#PyMaterialXGenShader.GenOptions.emitColorTransforms" title="Link to this definition">¶</a></dt>
-<dd><p>No docstring available for PyMaterialXGenShader.GenOptions.emitColorTransforms</p>
+<dd><p>(<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>)
+Enable emitting colorspace transform code if a color management
+system is defined. Defaults to <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="PyMaterialXGenShader.GenOptions.fileTextureVerticalFlip">
 <span class="sig-name descname"><span class="pre">fileTextureVerticalFlip</span></span><a class="headerlink" href="#PyMaterialXGenShader.GenOptions.fileTextureVerticalFlip" title="Link to this definition">¶</a></dt>
-<dd><p>No docstring available for PyMaterialXGenShader.GenOptions.fileTextureVerticalFlip</p>
+<dd><p>(<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>)
+If <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> the y-component of texture coordinates used for sampling
+file textures will be flipped before sampling. This can be used if
+file textures need to be flipped vertically to match the target’s
+texture space convention. By default this option is <code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="PyMaterialXGenShader.GenOptions.hwAmbientOcclusion">
 <span class="sig-name descname"><span class="pre">hwAmbientOcclusion</span></span><a class="headerlink" href="#PyMaterialXGenShader.GenOptions.hwAmbientOcclusion" title="Link to this definition">¶</a></dt>
-<dd><p>No docstring available for PyMaterialXGenShader.GenOptions.hwAmbientOcclusion</p>
+<dd><p>(<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>)
+Enables ambient occlusion rendering for HW shader targets.
+Defaults to <code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="PyMaterialXGenShader.GenOptions.hwImplicitBitangents">
 <span class="sig-name descname"><span class="pre">hwImplicitBitangents</span></span><a class="headerlink" href="#PyMaterialXGenShader.GenOptions.hwImplicitBitangents" title="Link to this definition">¶</a></dt>
-<dd><p>No docstring available for PyMaterialXGenShader.GenOptions.hwImplicitBitangents</p>
+<dd><p>(<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>)
+Calculate fallback bitangents from existing normals and tangents
+inside the bitangent node.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="PyMaterialXGenShader.GenOptions.hwMaxActiveLightSources">
 <span class="sig-name descname"><span class="pre">hwMaxActiveLightSources</span></span><a class="headerlink" href="#PyMaterialXGenShader.GenOptions.hwMaxActiveLightSources" title="Link to this definition">¶</a></dt>
-<dd><p>No docstring available for PyMaterialXGenShader.GenOptions.hwMaxActiveLightSources</p>
+<dd><p>(<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>)
+Sets the maximum number of light sources that can
+be active at once.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="PyMaterialXGenShader.GenOptions.hwNormalizeUdimTexCoords">
 <span class="sig-name descname"><span class="pre">hwNormalizeUdimTexCoords</span></span><a class="headerlink" href="#PyMaterialXGenShader.GenOptions.hwNormalizeUdimTexCoords" title="Link to this definition">¶</a></dt>
-<dd><p>No docstring available for PyMaterialXGenShader.GenOptions.hwNormalizeUdimTexCoords</p>
+<dd><p>(<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>)
+Sets whether to transform texture coordinates to normalize
+uv space when UDIMs images are bound to an image. Can be
+enabled for when texture atlas generation is performed to
+compress a set of UDIMs into a single normalized image for
+hardware rendering.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="PyMaterialXGenShader.GenOptions.hwShadowMap">
 <span class="sig-name descname"><span class="pre">hwShadowMap</span></span><a class="headerlink" href="#PyMaterialXGenShader.GenOptions.hwShadowMap" title="Link to this definition">¶</a></dt>
-<dd><p>No docstring available for PyMaterialXGenShader.GenOptions.hwShadowMap</p>
+<dd><p>(<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>)
+Enables shadow mapping for HW shader targets.
+Defaults to <code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="PyMaterialXGenShader.GenOptions.hwSpecularEnvironmentMethod">
 <span class="sig-name descname"><span class="pre">hwSpecularEnvironmentMethod</span></span><a class="headerlink" href="#PyMaterialXGenShader.GenOptions.hwSpecularEnvironmentMethod" title="Link to this definition">¶</a></dt>
-<dd><p>No docstring available for PyMaterialXGenShader.GenOptions.hwSpecularEnvironmentMethod</p>
+<dd><p>(<a class="reference internal" href="PyMaterialXGenShader.HwSpecularEnvironmentMethod.html#PyMaterialXGenShader.HwSpecularEnvironmentMethod" title="PyMaterialXGenShader.HwSpecularEnvironmentMethod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HwSpecularEnvironmentMethod</span></code></a>)
+Sets the method to use for specular environment lighting
+for HW shader targets.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="PyMaterialXGenShader.GenOptions.hwSrgbEncodeOutput">
 <span class="sig-name descname"><span class="pre">hwSrgbEncodeOutput</span></span><a class="headerlink" href="#PyMaterialXGenShader.GenOptions.hwSrgbEncodeOutput" title="Link to this definition">¶</a></dt>
-<dd><p>No docstring available for PyMaterialXGenShader.GenOptions.hwSrgbEncodeOutput</p>
+<dd><p>(<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>)
+Enables an sRGB encoding for the color output on HW shader targets.
+Defaults to <code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="PyMaterialXGenShader.GenOptions.hwTransparency">
 <span class="sig-name descname"><span class="pre">hwTransparency</span></span><a class="headerlink" href="#PyMaterialXGenShader.GenOptions.hwTransparency" title="Link to this definition">¶</a></dt>
-<dd><p>No docstring available for PyMaterialXGenShader.GenOptions.hwTransparency</p>
+<dd><p>(<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>)
+Sets if transparency is needed or not for HW shaders.
+If a surface shader has potential of being transparent
+this must be set to <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code>, otherwise no transparency
+code fragments will be generated for the shader and
+the surface will be fully opaque.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="PyMaterialXGenShader.GenOptions.hwWriteAlbedoTable">
 <span class="sig-name descname"><span class="pre">hwWriteAlbedoTable</span></span><a class="headerlink" href="#PyMaterialXGenShader.GenOptions.hwWriteAlbedoTable" title="Link to this definition">¶</a></dt>
-<dd><p>No docstring available for PyMaterialXGenShader.GenOptions.hwWriteAlbedoTable</p>
+<dd><p>(<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>)
+Enables the writing of a directional albedo table.
+Defaults to <code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="PyMaterialXGenShader.GenOptions.hwWriteDepthMoments">
 <span class="sig-name descname"><span class="pre">hwWriteDepthMoments</span></span><a class="headerlink" href="#PyMaterialXGenShader.GenOptions.hwWriteDepthMoments" title="Link to this definition">¶</a></dt>
-<dd><p>No docstring available for PyMaterialXGenShader.GenOptions.hwWriteDepthMoments</p>
+<dd><p>(<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>)
+Enables the writing of depth moments for HW shader targets.
+Defaults to <code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="PyMaterialXGenShader.GenOptions.hwWriteEnvPrefilter">
 <span class="sig-name descname"><span class="pre">hwWriteEnvPrefilter</span></span><a class="headerlink" href="#PyMaterialXGenShader.GenOptions.hwWriteEnvPrefilter" title="Link to this definition">¶</a></dt>
-<dd><p>No docstring available for PyMaterialXGenShader.GenOptions.hwWriteEnvPrefilter</p>
+<dd><p>(<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>)
+Enables the generation of a prefiltered environment map.
+Defaults to <code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="PyMaterialXGenShader.GenOptions.libraryPrefix">
 <span class="sig-name descname"><span class="pre">libraryPrefix</span></span><a class="headerlink" href="#PyMaterialXGenShader.GenOptions.libraryPrefix" title="Link to this definition">¶</a></dt>
-<dd><p>No docstring available for PyMaterialXGenShader.GenOptions.libraryPrefix</p>
+<dd><p>(<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>)
+The standard library prefix, which will be applied to
+calls to <code class="xref py py-obj docutils literal notranslate"><span class="pre">emitLibraryInclude()</span></code> during code generation.
+Defaults to <code class="xref py py-obj docutils literal notranslate"><span class="pre">'libraries'</span></code>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="PyMaterialXGenShader.GenOptions.shaderInterfaceType">
 <span class="sig-name descname"><span class="pre">shaderInterfaceType</span></span><a class="headerlink" href="#PyMaterialXGenShader.GenOptions.shaderInterfaceType" title="Link to this definition">¶</a></dt>
-<dd><p>No docstring available for PyMaterialXGenShader.GenOptions.shaderInterfaceType</p>
+<dd><p>(<a class="reference internal" href="PyMaterialXGenShader.ShaderInterfaceType.html#PyMaterialXGenShader.ShaderInterfaceType" title="PyMaterialXGenShader.ShaderInterfaceType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ShaderInterfaceType</span></code></a>)
+Sets the type of shader interface to be generated.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="PyMaterialXGenShader.GenOptions.targetColorSpaceOverride">
 <span class="sig-name descname"><span class="pre">targetColorSpaceOverride</span></span><a class="headerlink" href="#PyMaterialXGenShader.GenOptions.targetColorSpaceOverride" title="Link to this definition">¶</a></dt>
-<dd><p>No docstring available for PyMaterialXGenShader.GenOptions.targetColorSpaceOverride</p>
+<dd><p>(<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>)
+An optional override for the target color space.
+Shader fragments will be generated to transform
+input values and textures into this color space.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="PyMaterialXGenShader.GenOptions.targetDistanceUnit">
 <span class="sig-name descname"><span class="pre">targetDistanceUnit</span></span><a class="headerlink" href="#PyMaterialXGenShader.GenOptions.targetDistanceUnit" title="Link to this definition">¶</a></dt>
-<dd><p>No docstring available for PyMaterialXGenShader.GenOptions.targetDistanceUnit</p>
+<dd><p>(<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>)
+Define the target distance unit.
+Shader fragments will be generated to transform
+input distance values to the given unit.</p>
 </dd></dl>
 
 </section>
